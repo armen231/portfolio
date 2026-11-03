@@ -1,0 +1,91 @@
+@use "../../shared_files/mixin" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+.body {
+    .body2 {
+        .header {
+            margin: calc(10px + (51 - 10) * ((100vw - 250px) / (1600 - 250))) auto calc(10px + (190 - 10) * ((100vw - 250px) / (1600 - 250))) auto;
+
+        }
+
+        .section1 {
+            width: 100%;
+            margin-bottom: calc(10px + (214 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+            .container {
+                margin: 0px auto;
+                @include sc_width(300, 1110, 320, 1600);
+
+                .text1 {
+                    @include sc_font_size(20, 55, 250, 1600);
+                    margin-bottom: 26px;
+                }
+
+                .text2 {
+                    font-size: 17px;
+
+                    .text2__span1 {
+                        font-size: 17px;
+                        color: rgba(144, 144, 144, 1);
+                    }
+                }
+            }
+        }
+
+        .section2 {
+            width: 100%;
+            margin-bottom: calc(10px + (130 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+            .container {
+                margin: 0px auto;
+                @include sc_width(220, 1110, 240, 1600);
+                display: flex;
+                justify-content: space-between;
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+
+                    img {
+                        margin: 6px calc(10px + (44 - 10) * ((100vw - 250px) / (1600 - 250))) 6px 12px;
+                    }
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        margin: 10px 0px 10px 0px;
+
+                        .text1 {
+                            font-size: 25px;
+                            line-height: 35px;
+                        }
+                    }
+                }
+
+
+                .link_main {
+                    @include sc_padding(10, 20,
+                        20, 50,
+                        10, 20,
+                        20, 50,
+                        250, 1600);
+                    color: rgba(110, 156, 159, 1);
+                    border: 1px solid rgba(110, 156, 159, 1);
+                    margin: auto 14px auto 14px;
+                    background: transparent;
+                    justify-self: auto;
+                    transition: all 0.5s;
+                    height: 68px;
+
+
+                    &:hover {
+                        background: rgba(110, 156, 159, 1);
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

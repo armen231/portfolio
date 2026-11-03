@@ -1,0 +1,85 @@
+@use "../../../Public/scss/shared_file/mixin" as m;
+
+@media (max-width: 915px) {
+    .body .catalog .container .catalog__project-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .body .advantages__external .advantages__subscribe {
+        flex-direction: column;
+        row-gap: 122px;
+
+        .advantages__inner {
+            flex-basis: 0px;
+        }
+    }
+
+    .body .catalog .container .catalog__project-inner .catalog__project {
+        @include m.sc_height(100, 200, 250, 1366);
+    }
+}
+
+@media (min-width: 1366px) {
+    .body {
+
+        .title {
+            margin-top: 52px;
+            margin-bottom: 34px;
+
+            .container {
+                width: 1224px;
+            }
+        }
+
+        .catalog {
+
+            .container {
+                width: 1224px;
+
+                .catalog__title {
+                    font-size: 46px;
+                    line-height: 56px;
+                    margin-bottom: 40px;
+                }
+
+                .catalog__project-inner {
+
+                    .catalog__project {
+                        height: 237px;
+                    }
+                }
+            }
+        }
+
+        .advantages__external {
+            margin-top: 90px;
+
+            .advantages__img {
+                height: 339px;
+                left: 0px;
+            }
+
+            .advantages__subscribe {
+                width: 1224px;
+                padding: 111px 0px 132px 0px;
+                column-gap: 121px;
+
+                .advantages__inner {
+
+                    .advantages__p1 {
+                        font-size: 30px;
+                        line-height: 36px;
+
+                        .advantages__span {
+                            font-size: 30px;
+                            line-height: 36px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@use "../shared_files/mixin" as m;
+
+@media (max-width: 600px) {
+    body .body2 .section2 .container .text1 {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    body .body2 .section2 .container .text2 .form {
+        @include m.sc_width(240, 443, 250, 600);
+    }
+}
+
+@media (min-width: 1600px) {
+    body {
+        .body2 {
+            .section1 {
+                width: 100%;
+                margin-bottom: 214px;
+
+                .container {
+                    width: 1110px;
+
+                    .text1 {
+                        font-size: 55px;
+                    }
+                }
+            }
+
+            .section2 {
+                margin-bottom: 130px;
+
+                .container {
+                    width: 1110px;
+                    row-gap: 130px;
+
+                    .text1 {
+                        display: flex;
+
+                        .content:nth-child(1) {
+                            margin: 0px 111px 0px 0px;
+                        }
+
+                        .content:nth-child(2) {
+                            margin: 0px 98px 0px 0px;
+                        }
+                    }
+
+                    .text2 {
+                        row-gap: 62px;
+
+                        .title {
+                            font-size: 25px;
+                        }
+
+                        .form {
+                            .send {
+                                padding: 20px 50px 20px 50px;
+                            }
+
+                            .message_send {
+                                margin-top: 62px;
+                                padding: 30px 76px 30px 76px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

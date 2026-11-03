@@ -1,0 +1,289 @@
+@use "../../../Public/scss/shared_file/mixin" as *;
+
+// font-family: 'Inter', sans-serif;
+// font-family: 'Jost', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Sintony', sans-serif;
+
+.body {
+
+    .title {
+        width: 100%;
+        @include sc_margin-top(36, 52, 250, 1366);
+        @include sc_margin-bottom(26, 34, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .title__p1 {
+                font-family: Montserrat;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 15px;
+                letter-spacing: 0em;
+                color: rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+
+    .catalog {
+        width: 100%;
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .catalog__title {
+                font-family: Inter;
+                @include sc_font_size(20 ,46 ,250 ,1366 );
+                font-weight: 700;
+                @include sc_line-height(36 ,56 ,250 ,1366 );
+                letter-spacing: 0em;
+                color: black;
+                @include sc_margin-bottom(31, 40, 250, 1366);
+            }
+
+            .catalog__project-inner {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-column-gap: 20px;
+                grid-row-gap: 20px;
+
+                .catalog__project {
+                    @include sc_height(237, 237, 250, 1366);
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    .catalog__progect-img {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .catalog__project-p {
+                        font-family: Montserrat;
+                        font-size: 30px;
+                        font-weight: 800;
+                        line-height: 33px;
+                        letter-spacing: 0em;
+                        color: white;
+                        z-index: 1;
+                        margin: 0px auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .advantages__external {
+        background: rgba(246, 246, 249, 0.9);
+        position: relative;
+        @include sc_margin-top(90 ,90 ,250 ,1366 );
+        overflow-x: clip;
+
+        .advantages__img {
+            @include sc_height(339, 339, 250, 1366);
+            opacity: 0.5;
+            filter: blur(24.5px);
+            position: absolute;
+            top: 0px;
+            @include sc_left(-1100 ,0 ,250 ,1366 );
+            height: 100%;
+        }
+
+        .advantages__subscribe {
+            position: relative;
+            z-index: 1;
+            margin: 0px auto;
+            @include sc_width(250, 1224, 300, 1366);
+            @include sc_padding(112, 111,
+                0, 0,
+                155, 132,
+                0, 0,
+                250, 1366);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include sc_column-gap(10, 121, 250, 1366);
+
+            .advantages__inner {
+                flex-basis: 609px;
+
+                .advantages__p1 {
+                    font-family: Inter;
+                    @include sc_font_size(20, 30, 250, 1366);
+                    font-weight: 700;
+                    @include sc_line-height(20, 36, 250, 1366);
+                    letter-spacing: 0em;
+                    margin-bottom: 30px;
+
+                    .advantages__span {
+                        font-family: Inter;
+                        @include sc_font_size(20, 30, 250, 1366);
+                        font-weight: 400;
+                        @include sc_line-height(20, 36, 250, 1366);
+                        letter-spacing: 0em;
+                    }
+                }
+
+                .advantages__p2 {
+                    font-family: Montserrat;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    letter-spacing: 0em;
+                }
+            }
+
+        }
+    }
+}
+
+
+.body-dark {
+
+    .title {
+        width: 100%;
+        @include sc_margin-top(36, 52, 250, 1366);
+        @include sc_margin-bottom(26, 34, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .title__p1 {
+                font-family: Montserrat;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 15px;
+                letter-spacing: 0em;
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+
+    .catalog {
+        width: 100%;
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .catalog__title {
+                font-family: Inter;
+                @include sc_font_size(20 ,46 ,250 ,1366 );
+                font-weight: 700;
+                @include sc_line-height(36 ,56 ,250 ,1366 );
+                letter-spacing: 0em;
+                color: rgb(255, 255, 255);
+                @include sc_margin-bottom(31, 40, 250, 1366);
+            }
+
+            .catalog__project-inner {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-column-gap: 20px;
+                grid-row-gap: 20px;
+
+                .catalog__project {
+                    @include sc_height(237, 237, 250, 1366);
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    .catalog__progect-img {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .catalog__project-p {
+                        font-family: Montserrat;
+                        font-size: 30px;
+                        font-weight: 800;
+                        line-height: 33px;
+                        letter-spacing: 0em;
+                        color: white;
+                        z-index: 1;
+                        margin: 0px auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .advantages__external {
+        background: rgba(246, 246, 249, 0.9);
+        position: relative;
+        @include sc_margin-top(90 ,90 ,250 ,1366 );
+        overflow-x: clip;
+
+        .advantages__img {
+            @include sc_height(339, 339, 250, 1366);
+            opacity: 0.5;
+            filter: blur(24.5px);
+            position: absolute;
+            top: 0px;
+            @include sc_left(-1100 ,0 ,250 ,1366 );
+            height: 100%;
+        }
+
+        .advantages__subscribe {
+            position: relative;
+            z-index: 1;
+            margin: 0px auto;
+            @include sc_width(250, 1224, 300, 1366);
+            @include sc_padding(112, 111,
+                0, 0,
+                155, 132,
+                0, 0,
+                250, 1366);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include sc_column-gap(10, 121, 250, 1366);
+
+            .advantages__inner {
+                flex-basis: 609px;
+
+                .advantages__p1 {
+                    font-family: Inter;
+                    @include sc_font_size(20, 30, 250, 1366);
+                    font-weight: 700;
+                    @include sc_line-height(20, 36, 250, 1366);
+                    letter-spacing: 0em;
+                    margin-bottom: 30px;
+
+                    .advantages__span {
+                        font-family: Inter;
+                        @include sc_font_size(20, 30, 250, 1366);
+                        font-weight: 400;
+                        @include sc_line-height(20, 36, 250, 1366);
+                        letter-spacing: 0em;
+                    }
+                }
+
+                .advantages__p2 {
+                    font-family: Montserrat;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    letter-spacing: 0em;
+                }
+            }
+        }
+    }
+}

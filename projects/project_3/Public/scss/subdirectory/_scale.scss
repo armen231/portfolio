@@ -1,0 +1,170 @@
+@use "../../../Public/scss/shared_file/mixin" as m;
+
+@media (max-width: 550px) {
+    .body .advantages__external .advantages__subscribe {
+        flex-direction: column;
+        row-gap: 122px;
+
+        .advantages__inner {
+            flex-basis: 0px;
+        }
+    }
+
+    .body .catalog .container .catalog__project-inner .catalog__project {
+        @include m.sc_height(100, 200, 250, 1366);
+    }
+}
+
+@media (max-width: 1326px) {
+    .body .content-inner .container {
+        justify-content: space-around;
+    }
+
+    .body .content-inner .container .list-project .projects {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1019px) {
+    .body .content-inner .container .list-project .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .body .content-inner .container .list-project .sort .sort__p1 {
+        display: none;
+    }
+
+    .body .content-inner .container .list-project .sort .sort__sort-list {
+        width: 250px;
+    }
+}
+
+@media (max-width: 700px) {
+    .body .content-inner .container {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .body .content-inner .container .filter {
+        @include m.sc_width(250, 1224, 300, 1366);
+    }
+
+    .body .content-inner .container .list-project .sort {
+        justify-content: center;
+    }
+
+    .body .content-inner .container .list-project .projects .projects__card {
+        margin: 0px auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .body .content-inner .container .filter .filter__input {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .body .content-inner .container .filter .filter__size .size-input .size-button {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .body .content-inner .container .list-project .projects .projects__card {
+        @include m.sc_width(210, 280, 250, 320);
+    }
+
+    .body .content-inner .container .list-project .show .show__progress {
+        display: none;
+    }
+
+    .body .content-inner .container .list-project .show {
+        grid-column-gap: 0px;
+    }
+
+    .body .content-inner .container .filter .filter__cost .cost__p2 .cost__span1 {
+        padding: 0px 0px;
+    }
+}
+
+@media (min-width: 1366px) {
+    .body {
+        .title {
+            margin-top: 52px;
+            margin-bottom: 41px;
+
+            .container {
+                width: 1224px;
+
+                .title__p1 {
+                    margin-bottom: 98px;
+                }
+
+                .title__p2 {
+                    font-size: 46px
+                }
+            }
+        }
+
+        .content-inner {
+
+            .container {
+                width: 1224px;
+
+                .filter {
+                    .filter__title {
+                        padding-bottom: 44px;
+                    }
+                }
+
+
+
+                .list-project {
+                    .sort {
+                        .sort__sort-list {
+                            padding: 13px 21px;
+                        }
+                    }
+
+                    .show {
+                        margin-top: 50px;
+                        margin-bottom: 85px;
+
+                        .show__button {
+                            padding: 54px 33px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .advantages__external {
+            margin-top: 90px;
+
+            .advantages__img {
+                height: 339px;
+                left: 0px;
+            }
+
+            .advantages__subscribe {
+                width: 1224px;
+                padding: 111px 0px 132px 0px;
+                column-gap: 121px;
+
+                .advantages__inner {
+
+                    .advantages__p1 {
+                        font-size: 30px;
+                        line-height: 36px;
+
+                        .advantages__span {
+                            font-size: 30px;
+                            line-height: 36px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

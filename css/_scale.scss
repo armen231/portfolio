@@ -1,0 +1,39 @@
+@use "mixin" as m;
+
+@media (max-width: 400px) {
+    .body .main_container .section1 .container {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+}
+
+@media (min-width: 1600px) {
+
+
+    .body {
+
+        .main_container {
+
+            .section1 {
+
+                .container {
+                    column-gap: 60px;
+
+                    .project {
+                        border-radius: 30px;
+                        padding: 30px;
+
+                        img {
+                            width: 100%;
+                            padding-bottom: 20px;
+                            border-bottom: 1px solid rgba(0, 122, 204, 0.3);
+                            border-radius: 5px 5px 0px 0px;
+                        }
+
+                       
+                    }
+                }
+            }
+        }
+    }
+}

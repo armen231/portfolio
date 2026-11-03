@@ -1,0 +1,284 @@
+@use "mixin" as *;
+
+.body {
+    background: white;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        margin: 0px auto;
+        max-width: 1100px;
+        padding-top: 10px;
+
+        .container {
+            margin: 0px auto;
+            @include sc_width(230, 1110, 250, 1600);
+
+            .header_header {
+                border-radius: calc(15px + 15 * (100vw - 250px) / 1350);
+                padding: 10px;
+                width: 100%;
+                box-shadow: 0px 0px 70px rgba(0, 122, 204, 0.1);
+                display: flex;
+                justify-content: space-between;
+
+                .header_logo {
+                    background: white;
+                    border-radius: 50%;
+                    position: relative;
+                    width: 24px;
+                    height: 24px;
+
+                    .header_img-logo {
+                        width: 15px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                .theme {
+                    cursor: default;
+                    background: white;
+                    border-radius: 50%;
+                    position: relative;
+                    width: 24px;
+                    height: 24px;
+
+                    .header_theme-light {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        opacity: 0;
+                        font-size: 18px;
+                        transition: all 0.3s;
+                    }
+
+                    .header_theme-dark {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        opacity: 1;
+                        transition: all 0.3s;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .main_container {
+        margin: 0px auto;
+        max-width: 1100px;
+
+        .section1 {
+            margin: 60px 0px 60px 0px;
+            width: 100%;
+
+            .container {
+                margin: 0px auto;
+                @include sc_width(230, 1110, 250, 1600);
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                @include sc_column-gap(30, 60, 400, 1600);
+                @include sc_row-gap(30, 60, 400, 1600);
+                justify-content: space-between;
+
+                .project {
+                    border-radius: 30px;
+                    @include sc_border-radius(15, 30, 250, 1600);
+                    padding: calc(10px + (30 - 10) * ((100vw - 250px) / (1600 - 250)));
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 20px;
+                    transition: 0.5s;
+                    box-shadow: 0px 0px 70px rgba(0, 122, 204, 0.1);
+
+                    img {
+                        width: 100%;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid rgba(0, 122, 204, 1);
+                        border-radius: 5px 5px 0px 0px;
+                    }
+
+                    .open_site {
+                        align-self: center;
+                        padding: 10px 30px 10px 30px;
+                        background: transparent;
+                        border-radius: 5px;
+                        border: 1px solid #007acc;
+                        color: #007acc;
+                        transition: 0.5s;
+
+                    }
+
+                    .open_site_touch1 {
+                        &:active {
+                            color: white;
+                            background: #007acc;
+                        }
+                    }
+
+                    .open_site_touch0 {
+                        &:hover {
+                            color: white;
+                            background: #007acc;
+                        }
+                    }
+                }
+
+                .project_touch0 {
+                    &:hover {
+                        box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.body-dark {
+    background: black;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        margin: 0px auto;
+        max-width: 1100px;
+        padding-top: 10px;
+
+        .container {
+            margin: 0px auto;
+            @include sc_width(230, 1110, 250, 1600);
+
+            .header_header {
+                border-radius: calc(15px + 15 * (100vw - 250px) / 1350);
+                padding: 10px;
+                width: 100%;
+                box-shadow: 0px 0px 70px rgba(0, 122, 204, 0.1);
+                display: flex;
+                justify-content: space-between;
+                background: #131313;
+
+                .header_logo {
+                    background: white;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+
+                    .header_img-logo {
+                        width: 15px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                .theme {
+                    cursor: default;
+                    background: white;
+                    border-radius: 50%;
+                    padding: 3px;
+                    position: relative;
+                    width: 24px;
+                    height: 24px;
+
+                    .header_theme-light {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        opacity: 0;
+                        font-size: 18px;
+                        transition: all 0.3s;
+                    }
+
+                    .header_theme-dark {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        opacity: 1;
+                        transition: all 0.3s;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .main_container {
+        margin: 0px auto;
+        max-width: 1100px;
+
+        .section1 {
+            margin: 60px 0px 60px 0px;
+            width: 100%;
+
+            .container {
+                margin: 0px auto;
+                @include sc_width(230, 1110, 250, 1600);
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                @include sc_column-gap(30, 60, 400, 1600);
+                @include sc_row-gap(30, 60, 400, 1600);
+                justify-content: space-between;
+
+                .project {
+                    border-radius: 30px;
+                    @include sc_border-radius(15, 30, 250, 1600);
+                    padding: calc(10px + (30 - 10) * ((100vw - 250px) / (1600 - 250)));
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 20px;
+                    transition: 0.5s;
+                    box-shadow: 0px 0px 70px rgba(0, 122, 204, 0.1);
+                    background: #131313;
+
+                    img {
+                        width: 100%;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid rgba(0, 122, 204, 1);
+                        border-radius: 5px 5px 0px 0px;
+                    }
+
+                    .open_site {
+                        align-self: center;
+                        padding: 10px 30px 10px 30px;
+                        background: transparent;
+                        border-radius: 5px;
+                        border: 1px solid #007acc;
+                        color: #007acc;
+                        transition: 0.5s;
+
+                    }
+
+                    .open_site_touch1 {
+                        &:active {
+                            color: white;
+                            background: #007acc;
+                        }
+                    }
+
+                    .open_site_touch0 {
+                        &:hover {
+                            color: white;
+                            background: #007acc;
+                        }
+                    }
+                }
+
+                .project_touch0 {
+                    &:hover {
+                        box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.4);
+                    }
+                }
+            }
+        }
+    }
+}

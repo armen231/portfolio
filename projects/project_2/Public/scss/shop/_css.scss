@@ -1,0 +1,248 @@
+@use "../shared_files/mixin" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+.body {
+    .body2 {
+        .header {
+            margin: calc(10px + (51 - 10) * ((100vw - 250px) / (1600 - 250))) auto calc(10px + (190 - 10) * ((100vw - 250px) / (1600 - 250))) auto;
+
+            .menu {
+                .menu__item {
+                    .shop {
+                        color: #6E9C9F;
+                    }
+                }
+            }
+        }
+
+        .section1 {
+            width: 100%;
+            margin-bottom: calc(10px + (214 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+            .container {
+                width: calc(300px + (1110 - 300) * ((100vw - 320px) / (1600 - 320)));
+                margin: 0px auto;
+
+                .text1 {
+                    font-size: calc(20px + (55 - 20) * ((100vw - 320px) / (1600 - 320)));
+                    line-height: 60.5px;
+                    margin-bottom: 26px;
+                }
+
+                .text2 {
+                    font-size: 17px;
+                    line-height: 23.8px;
+
+                    span {
+                        font-size: 17px;
+                        line-height: 23.8px;
+                        color: rgba(144, 144, 144, 1);
+                        ;
+                    }
+                }
+            }
+        }
+
+        .section2 {
+            width: 100%;
+            margin-bottom: calc(30px + (130 - 30) * ((100vw - 250px) / (1600 - 250)));
+
+            .container {
+                margin: 0px auto;
+                width: calc(300px + (1110 - 300) * ((100vw - 320px) / (1600 - 320)));
+
+                .product_category {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    margin-bottom: calc(10px + (92 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+                    button {
+                        transition: all 0.5s;
+
+                        &:hover {
+                            background: black;
+                            color: white;
+                        }
+
+                        &._active {
+                            background: black;
+                            color: white;
+                        }
+                    }
+
+                    button {
+                        background: transparent;
+                        @include sc_padding(10, 19,
+                            10, 65,
+                            10, 19,
+                            10, 65,
+                            320, 1600);
+                        border: 1px solid black;
+                        font-size: 17px;
+                        line-height: 23.8px;
+                    }
+                }
+
+                .products {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: calc(10px + (65 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+                    p {
+                        font-size: 17px;
+                        line-height: 23.8px;
+                    }
+
+                    .collection {
+                        transition: all 0.5s;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        column-gap: 30px;
+                        row-gap: calc(10px + (65 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+                        .collection__img {
+                            position: relative;
+                            width: 100%;
+
+
+                            div {
+                                opacity: 0;
+                                @include sc_height(130, 478, 400, 1600);
+                                width: 100%;
+                                position: absolute;
+                                transition: all 0.5s;
+                                display: flex;
+
+                                &:hover {
+                                    opacity: 1;
+                                    background: rgba(#6E9C9F, 0.77);
+                                }
+
+                                .fon {
+                                    position: absolute;
+                                    align-self: center;
+                                    left: 45%;
+                                    transition: all 0.5s;
+                                }
+                            }
+
+                            .img {
+                                max-height: calc(130px + (478 - 130) * ((100vw - 400px) / (1600 - 400)));
+                                width: 100%;
+                                // @include sc_height(130, 478, 400, 1600);
+                                z-index: -1;
+                                @include sc_margin(0, 0,
+                                    0, 0,
+                                    10, 24,
+                                    0, 0,
+                                    250, 1366);
+                            }
+
+                            .p1 {
+                                margin-bottom: 7px;
+                                color: black;
+                                font-weight: 600;
+                                @include sc_font_size(15, 20, 400, 1600);
+                                line-height: 28px;
+                            }
+
+                            .p2 {
+                                font-size: 15px;
+                                line-height: 21px;
+                                font-weight: 600;
+                            }
+
+                            .p1,
+                            .p2 {
+
+                                text-align: center;
+                                font-weight: 600;
+                            }
+
+
+                        }
+
+                        &._transition {
+                            opacity: 0;
+                        }
+
+                    }
+
+                    .nav {
+                        margin: 0px auto;
+                        display: flex;
+                        column-gap: 14px;
+
+                        button {
+                            border: 1px solid black;
+                            width: calc(18px + (41 - 18) * ((100vw - 250px) / (1600 - 250)));
+                            height: calc(30px + (41 - 30) * ((100vw - 250px) / (1600 - 250)));
+                            font-size: 17px;
+                            line-height: 23.8px;
+                            background: transparent;
+                            color: black;
+                            transition: all 0.5s;
+
+                            &._active {
+                                background: black;
+                                color: white;
+                            }
+
+                            &:hover {
+                                background: black;
+                                color: white;
+                            }
+                        }
+
+                        div {
+                            display: none;
+                            border: 0px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .products_button_right {
+                            display: none;
+
+
+
+                            &._active {
+                                display: contents;
+                            }
+                        }
+
+                        .products_button_left {
+                            display: none;
+
+                            img {
+                                transform: rotate(-180deg);
+                            }
+
+                            &._active {
+                                display: contents;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer {
+            .container {
+                .container1 {
+                    .menu {
+                        .menu__item {
+                            .shop {
+                                color: #6E9C9F;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

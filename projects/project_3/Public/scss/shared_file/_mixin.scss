@@ -1,0 +1,196 @@
+@use 'sass:math';
+
+@mixin sc_font_size($min_value, $max_value, $min_width, $max_width) {
+    font-size: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+
+}
+
+@mixin sc_line-height($min_value, $max_value, $min_width, $max_width) {
+    line-height: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_font-weight($min_value, $max_value, $min_width, $max_width) {
+    font-weight: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+@mixin sc_width($min_value, $max_value, $min_width, $max_width) {
+    width: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_max-width($min_value, $max_value, $min_width, $max_width) {
+    max-width: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_min-width($min_value, $max_value, $min_width, $max_width) {
+    min-width: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+
+
+
+
+
+@mixin sc_height($min_value, $max_value, $min_width, $max_width) {
+    height: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_max-height($min_value, $max_value, $min_width, $max_width) {
+    max-height: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_min-height($min_value, $max_value, $min_width, $max_width) {
+    min-height: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+@mixin sc_margin($min_value_up, $max_value_up,
+    $min_value_right, $max_value_right,
+    $min_value_down, $max_value_down,
+    $min_value_left, $max_value_left, $min_width, $max_width) {
+
+    margin:
+        calc($min_value_up * 1px + ($max_value_up - $min_value_up) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) calc($min_value_right * 1px + ($max_value_right - $min_value_right) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) calc($min_value_down * 1px + ($max_value_down - $min_value_down) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) calc($min_value_left * 1px + ($max_value_left - $min_value_left) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_margin-top($min_value, $max_value, $min_width, $max_width) {
+    margin-top: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_margin-right($min_value, $max_value, $min_width, $max_width) {
+    margin-right: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_margin-left($min_value, $max_value, $min_width, $max_width) {
+    margin-left: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_margin-bottom($min_value, $max_value, $min_width, $max_width) {
+    margin-bottom: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+@mixin sc_padding($min_value_up, $max_value_up,
+    $min_value_right, $max_value_right,
+    $min_value_down, $max_value_down,
+    $min_value_left, $max_value_left, $min_width, $max_width) {
+
+    padding:
+        calc($min_value_up * 1px + ($max_value_up - $min_value_up) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) calc($min_value_right * 1px + ($max_value_right - $min_value_right) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) calc($min_value_down * 1px + ($max_value_down - $min_value_down) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) calc($min_value_left * 1px + ($max_value_left - $min_value_left) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_padding-top($min_value, $max_value, $min_width, $max_width) {
+    padding-top: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_padding-right($min_value, $max_value, $min_width, $max_width) {
+    padding-right: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_padding-bottom($min_value, $max_value, $min_width, $max_width) {
+    padding-bottom: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_padding-left($min_value, $max_value, $min_width, $max_width) {
+    padding-left: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin sc_top($min_value, $max_value, $min_width, $max_width) {
+    top: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_left($min_value, $max_value, $min_width, $max_width) {
+    left: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_right($min_value, $max_value, $min_width, $max_width) {
+    right: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_bottom($min_value, $max_value, $min_width, $max_width) {
+    bottom: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+
+
+@mixin sc_border-radius($min_value, $max_value, $min_width, $max_width) {
+    border-radius: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+@mixin sc_column-gap($min_value, $max_value, $min_width, $max_width) {
+    column-gap: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_row-gap($min_value, $max_value, $min_width, $max_width) {
+    row-gap: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc($property, $min_value, $max_value, $min_width, $max_width) {
+    #{$property}: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+}

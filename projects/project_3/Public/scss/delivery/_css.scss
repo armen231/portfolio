@@ -1,0 +1,736 @@
+@use "../../../Public/scss/shared_file/mixin" as *;
+
+// font-family: 'Inter', sans-serif;
+// font-family: 'Jost', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Sintony', sans-serif;
+
+.body {
+
+    .devilery {
+        position: relative;
+        overflow-x: clip;
+
+        .devilery__fon {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 1366px;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.25;
+            filter: blur(24.5px);
+        }
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            @include sc_height(410, 546, 800, 1366);
+            margin: 0px auto;
+            display: grid;
+            grid-template-columns: auto 54%;
+            column-gap: 10px;
+
+            .devilery__part1 {
+
+                .devilery__p1 {
+                    @include sc_margin-top(36, 52, 250, 1366);
+                    color: rgba(0, 0, 0, 0.80);
+                    font-family: Montserrat;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include sc_margin-bottom(26, 24, 250, 1366);
+                }
+
+                .devilery__p2 {
+                    color: #000;
+                    font-family: Inter;
+                    @include sc_font_size(25, 46, 250, 1366);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 32px;
+                    @include sc_line-height(32, 43, 250, 1366);
+                    @include sc_margin-bottom(13, 12, 250, 1366);
+                }
+
+                .devilery__p3 {
+                    color: rgba(32, 32, 32, 0.80);
+                    font-family: Montserrat;
+                    @include sc_font_size(14, 16, 250, m1366ax_w);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include sc_margin-bottom(36, 101, 250, 1366);
+                }
+
+                .delivery__consultation {
+                    width: max-content;
+                    @include sc_margin-top(39, 122, 774, 1366);
+                    border-radius: 0px 20px 20px 0px;
+                    background: #536FA4;
+                    @include sc_padding(20, 36,
+                        29, 36,
+                        20, 36,
+                        29, 71,
+                        250, 1366);
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    @include sc_left(-50, -64, 250, 1366);
+                    @include sc_column-gap(20, 80, 800, 1366);
+                    align-items: center;
+
+
+                    .delivery__arrow1 {
+                        padding: 10px;
+                        background: white;
+                        color: #536FA4;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .devilery__part2 {
+                position: relative;
+
+                .devilery__img1 {
+                    z-index: -1;
+                    position: absolute;
+                    @include sc_top(-9, -60, 800, 1366);
+                    @include sc_left(-18, 91, 800, 1366);
+                    @include sc_height(380, 653, 800, 1366);
+                }
+            }
+
+            .delivery__consultation2 {
+                display: none;
+                border-radius: 20px;
+                background: #536FA4;
+                padding: 20px 29px;
+                align-items: start;
+                flex-wrap: wrap;
+                row-gap: 18px;
+
+                .delivery__p1 {
+                    color: #FFF;
+                    font-family: Inter;
+                    @include sc_font_size(16, 20, 250, 1366);
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: 23px;
+                    @include sc_line-height(18, 23, 250, 1366);
+                }
+            }
+        }
+    }
+
+    .cost-devilery {
+        width: 100%;
+        background: rgba(241, 241, 246, 1);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+            @include sc_margin-bottom(56, 64, 250, 1366);
+            @include sc_padding-top(59, 86, 250, 1366);
+            @include sc_padding-bottom(73, 80, 250, 1366);
+
+            .cost-devilery__p1 {
+                color: #000;
+                font-family: Inter;
+                @include sc_font_size(20, 38, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                @include sc_line-height(35, 40, 250, 1366);
+                @include sc_margin-bottom(41, 31, 250, 1366);
+            }
+
+            .cost-devilery__p2 {
+                color: #000;
+                font-family: Inter;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                @include sc_margin-bottom(29, 36, 250, 1366);
+            }
+
+            .cost-devilery__list-text {
+                color: #212864;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+
+                .cost-devilery__part {
+                    display: flex;
+                    column-gap: 22px;
+                    align-items: center;
+                    margin-bottom: 17px;
+
+                    .cost-devilery__mark {
+                        width: 15px;
+                        height: 15px;
+                        color: #536FA4;
+                    }
+                }
+
+                .cost-devilery__part:nth-child(4) {
+                    @include sc_margin-bottom(36, 46, 250, 1366);
+                }
+
+                .cost-devilery__part:nth-child(5) {
+                    @include sc_margin-bottom(33, 53, 250, 1366);
+
+                }
+            }
+
+            .cost-devilery__p3 {
+                color: #212864;
+                font-family: Montserrat;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                @include sc_margin-bottom(46, 80, 250, 1366);
+            }
+
+            .cost-devilery__choice {
+                width: 100%;
+                overflow-x: clip;
+                display: grid;
+                grid-template-columns: 49% 2% 49%;
+                column-gap: 10px;
+                align-items: center;
+
+                color: #000;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+
+                .cost-devilery__part1 {
+                    .cost-devilery__img-part1 {
+                        width: -webkit-fill-available;
+                    }
+
+                    .cost-devilery__p2 {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+
+                .cost-devilery__part2 {
+                    width: 2px;
+                    height: 300px;
+                    background: rgba(83, 111, 164, 0.6);
+                }
+
+                .cost-devilery__part3 {
+                    .cost-devilery__img-part2 {
+                        width: -webkit-fill-available;
+                    }
+
+                    .cost-devilery__p2 {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+
+                .cost-devilery__part1,
+                .cost-devilery__part3 {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                div {
+                    align-items: center;
+
+                    img {
+                        @include sc_height(180, 348, 552, 1366);
+                    }
+
+                    .cost-devilery__p1 {
+                        @include sc_font_size(20, 22, 250, 1366);
+                        margin-bottom: 8px;
+                    }
+
+                    .cost-devilery__p2 {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .assembling-devilery {
+        width: 100%;
+        background: rgba(67, 93, 143, 1);
+        overflow-x: clip;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+            @include sc_padding(76, 94,
+                0, 0,
+                88, 137,
+                0, 0,
+                250, 1366);
+
+            .assembling-devilery__p1 {
+                @include sc_width(240, 691, 250, 1366);
+                color: #FFF;
+                font-family: Inter;
+                @include sc_font_size(20, 36, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                @include sc_margin-bottom(32, 14, 250, 1366);
+
+                .assembling-devilery__span1 {
+                    font-weight: 400;
+                }
+            }
+
+            .assembling-devilery__p2 {
+                @include sc_width(240, 691, 250, 1366);
+                color: rgba(255, 255, 255, 0.80);
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @include sc_margin-bottom(53, 48, 250, 1366);
+            }
+
+            .assembling-devilery__input {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                @include sc_column-gap(10, 38, 250, 1366);
+                @include sc_margin-bottom(66, 33, 250, 1366);
+
+                input {
+                    width: 100%;
+                    border-radius: 15px;
+                    background: rgba(255, 255, 255, 0.90);
+                    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.15);
+                    padding: 25px 45px;
+                    color: #212864;
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+
+            .assembling-devilery__send {
+                border-radius: 30px;
+                background: #FFC239;
+                border: 1px solid #FFC239;
+                padding: 22px 0px;
+                text-align: center;
+                @include sc_width(240, 300, 250, 1366);
+                color: #212864;
+                font-family: Inter;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+                transition: all 0.5s;
+
+                &.assembling-devilery__send--touch1 {
+                    &:active {
+                        background: transparent;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+
+                &.assembling-devilery__send--touch0 {
+                    &:hover {
+                        background: transparent;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.body-dark {
+
+    .devilery {
+        position: relative;
+        overflow-x: clip;
+
+        .devilery__fon {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 1366px;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.25;
+            filter: blur(24.5px);
+        }
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            @include sc_height(410, 546, 800, 1366);
+            margin: 0px auto;
+            display: grid;
+            grid-template-columns: auto 54%;
+            column-gap: 10px;
+
+            .devilery__part1 {
+
+                .devilery__p1 {
+                    @include sc_margin-top(36, 52, 250, 1366);
+                    color: rgba(255, 255, 255, 0.8);
+                    font-family: Montserrat;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include sc_margin-bottom(26, 24, 250, 1366);
+                }
+
+                .devilery__p2 {
+                    color: #ffffff;
+                    font-family: Inter;
+                    @include sc_font_size(25, 46, 250, 1366);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 32px;
+                    @include sc_line-height(32, 43, 250, 1366);
+                    @include sc_margin-bottom(13, 12, 250, 1366);
+                }
+
+                .devilery__p3 {
+                    color: rgba(214, 214, 214, 0.8);
+                    font-family: Montserrat;
+                    @include sc_font_size(14, 16, 250, m1366ax_w);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include sc_margin-bottom(36, 101, 250, 1366);
+                }
+
+                .delivery__consultation {
+                    width: max-content;
+                    @include sc_margin-top(39, 122, 774, 1366);
+                    border-radius: 0px 20px 20px 0px;
+                    background: #536FA4;
+                    @include sc_padding(20, 36,
+                        29, 36,
+                        20, 36,
+                        29, 71,
+                        250, 1366);
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    @include sc_left(-50, -64, 250, 1366);
+                    @include sc_column-gap(20, 80, 800, 1366);
+                    align-items: center;
+
+                    .delivery__p1 {
+                        color: #FFF;
+                        font-family: Inter;
+                        @include sc_font_size(16, 20, 250, 1366);
+                        font-style: normal;
+                        font-weight: 800;
+                        line-height: 23px;
+                        @include sc_line-height(18, 23, 250, 1366);
+                    }
+
+                    .delivery__arrow1 {
+                        padding: 10px;
+                        background: white;
+                        color: #536FA4;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .devilery__part2 {
+                position: relative;
+
+                .devilery__img1 {
+                    position: absolute;
+                    @include sc_top(-9, -60, 800, 1366);
+                    @include sc_left(-18, 91, 800, 1366);
+                    @include sc_height(380, 653, 800, 1366);
+                }
+            }
+
+            .delivery__consultation2 {
+                display: none;
+                border-radius: 20px;
+                background: #536FA4;
+                padding: 20px 29px;
+                align-items: start;
+                flex-wrap: wrap;
+                row-gap: 18px;
+
+                .delivery__p1 {
+                    color: #FFF;
+                    font-family: Inter;
+                    @include sc_font_size(16, 20, 250, 1366);
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: 23px;
+                    @include sc_line-height(18, 23, 250, 1366);
+                }
+
+                .delivery__arrow1 {
+                    padding: 10px;
+                    background: white;
+                    color: #536FA4;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .cost-devilery {
+        width: 100%;
+        background: rgb(20, 20, 21);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+            @include sc_margin-bottom(56, 64, 250, 1366);
+            @include sc_padding-top(59, 86, 250, 1366);
+            @include sc_padding-bottom(73, 80, 250, 1366);
+
+            .cost-devilery__p1 {
+                color: #ffffff;
+                font-family: Inter;
+                @include sc_font_size(20, 38, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                @include sc_line-height(35, 40, 250, 1366);
+                @include sc_margin-bottom(41, 31, 250, 1366);
+            }
+
+            .cost-devilery__p2 {
+                color: #ffffff;
+                font-family: Inter;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                @include sc_margin-bottom(29, 36, 250, 1366);
+            }
+
+            .cost-devilery__list-text {
+                color: #d0d2e5;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+
+                .cost-devilery__part {
+                    display: flex;
+                    column-gap: 22px;
+                    align-items: center;
+                    margin-bottom: 17px;
+
+                    .cost-devilery__mark {
+                        width: 15px;
+                        height: 15px;
+                        color: #c9d1e1;
+                    }
+                }
+
+                .cost-devilery__part:nth-child(4) {
+                    @include sc_margin-bottom(36, 46, 250, 1366);
+                }
+
+                .cost-devilery__part:nth-child(5) {
+                    @include sc_margin-bottom(33, 53, 250, 1366);
+
+                }
+            }
+
+            .cost-devilery__p3 {
+                color: #c4c7df;
+                font-family: Montserrat;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                @include sc_margin-bottom(46, 80, 250, 1366);
+            }
+
+            .cost-devilery__choice {
+                width: 100%;
+                overflow-x: clip;
+                display: grid;
+                grid-template-columns: 49% 2% 49%;
+                column-gap: 10px;
+                align-items: center;
+
+                color: #ffffff;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+
+                .cost-devilery__part1 {
+                    .cost-devilery__img-part1 {
+                        width: -webkit-fill-available;
+                    }
+
+                    .cost-devilery__p2 {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+
+                .cost-devilery__part2 {
+                    width: 2px;
+                    height: 300px;
+                    background: rgba(83, 111, 164, 0.6);
+                }
+
+                .cost-devilery__part3 {
+                    .cost-devilery__img-part2 {
+                        width: -webkit-fill-available;
+                    }
+
+                    .cost-devilery__p2 {
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+
+                .cost-devilery__part1,
+                .cost-devilery__part3 {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                div {
+                    align-items: center;
+
+                    img {
+                        @include sc_height(180, 348, 552, 1366);
+                    }
+
+                    .cost-devilery__p1 {
+                        @include sc_font_size(20, 22, 250, 1366);
+                        margin-bottom: 8px;
+                    }
+
+                    .cost-devilery__p2 {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .assembling-devilery {
+        width: 100%;
+        background: rgba(67, 93, 143, 1);
+        overflow-x: clip;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+            @include sc_padding(76, 94,
+                0, 0,
+                88, 137,
+                0, 0,
+                250, 1366);
+
+            .assembling-devilery__p1 {
+                @include sc_width(240, 691, 250, 1366);
+                color: #FFF;
+                font-family: Inter;
+                @include sc_font_size(20, 36, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                @include sc_margin-bottom(32, 14, 250, 1366);
+
+                .assembling-devilery__span1 {
+                    font-weight: 400;
+                }
+            }
+
+            .assembling-devilery__p2 {
+                @include sc_width(240, 691, 250, 1366);
+                color: rgba(255, 255, 255, 0.80);
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @include sc_margin-bottom(53, 48, 250, 1366);
+            }
+
+            .assembling-devilery__input {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                @include sc_column-gap(10, 38, 250, 1366);
+                @include sc_margin-bottom(66, 33, 250, 1366);
+
+                input {
+                    width: 100%;
+                    border-radius: 15px;
+                    background: rgba(255, 255, 255, 0.90);
+                    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.15);
+                    padding: 25px 45px;
+                    color: #212864;
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+
+            .assembling-devilery__send {
+                border-radius: 30px;
+                background: #FFC239;
+                border: 1px solid #FFC239;
+                padding: 22px 0px;
+                text-align: center;
+                @include sc_width(240, 300, 250, 1366);
+                color: #212864;
+                font-family: Inter;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+                transition: all 0.5s;
+
+                &.assembling-devilery__send--touch1 {
+                    &:active {
+                        background: transparent;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+
+                &.assembling-devilery__send--touch0 {
+                    &:hover {
+                        background: transparent;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+}

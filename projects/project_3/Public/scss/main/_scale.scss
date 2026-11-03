@@ -1,0 +1,283 @@
+@use "../../../Public/scss/shared_file/mixin" as m;
+
+@media (max-width: 915px) {
+    .construction {
+        .container {
+            .construction__list {
+                .construction__p1 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 552px) {
+    .construction {
+        .container {
+            .construction__list {
+                .construction__p2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .body .advantages .container {
+        overflow: hidden;
+
+        .advantages__advantage-category {
+            position: relative;
+            left: 0%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            width: 200%;
+            transition: all 0.5s;
+        }
+
+        .advantages__nav {
+            display: flex;
+
+            .advantages__arrow1,
+            .advantages__arrow2 {
+                color: rgba(33, 40, 100, 0.4);
+                font-size: 60px;
+            }
+
+            .advantages__arrow1 {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    .body .advantages .advantages__external .advantages__subscribe {
+        flex-direction: column;
+        row-gap: 122px;
+
+        .advantages__inner {
+            flex-basis: 0px;
+        }
+    }
+}
+
+@media (max-width: 620px) {
+    .body .layout .container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 1099px) {
+    .body .options .container div {
+        display: block;
+        overflow: hidden;
+
+        .options__home {
+            position: absolute;
+            top: 0px;
+            opacity: 0.6;
+            left: calc(-350px + (10 - (-350)) * ((100vw - 250px) / (1099 - 250)))
+        }
+
+        .options__contant {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: -webkit-fill-available;
+            width: -webkit-fill-available;
+            z-index: 1;
+
+            .options__service {
+                margin-top: 90px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1366px) {
+    .body, .body-dark {
+
+        .construction {
+
+            .container {
+
+                .construction__list {
+                    top: 113px;
+                    left: 89px;
+
+                    .construction__p1 {
+                        font-size: 48px;
+                        line-height: 55px;
+                    }
+
+                    .construction__p2 {
+                        margin-bottom: 46px;
+                    }
+                }
+            }
+        }
+
+        .offers {
+            margin-top: 88px;
+
+            .container {
+                width: 1224px;
+
+                .offers__title {
+                    font-size: 42px;
+                    line-height: 51px;
+                }
+
+                .offers__categoryes {
+                    .offers__p {
+                        font-size: 20px;
+                        line-height: 20px;
+                    }
+                }
+
+                .offers__list {
+
+                    .offers__card {
+
+                        .offers__description {
+
+                            .description__title {
+                                line-height: 19px;
+                            }
+
+                            .description__title {
+                                margin-bottom: 17px;
+                            }
+
+                            .description__price {
+                                font-size: 22px;
+                                margin-top: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .options {
+
+            .container {
+                height: 461px;
+
+
+                .options__contant-left,
+                .options__contant-right {
+
+                    .options__contant {
+                        margin: 79px 78px 49px 63px;
+
+                        .options__p {
+                            line-height: 42px;
+
+                            .options__span {
+                                line-height: 42px;
+                            }
+                        }
+                    }
+                }
+
+                .options__contant-left {
+
+                    .options__contant {
+
+                        .options__service {
+                            margin-top: 51px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .advantages {
+            margin-bottom: 180px;
+
+            .container {
+                width: 1224px;
+
+                .advantages__title {
+                    font-size: 42px;
+                    line-height: 51px;
+                    margin-top: 82px;
+                    margin-bottom: 52px;
+                }
+
+                .advantages__advantage-category {
+                    margin-bottom: 92px;
+
+                    div {
+
+                        .advantages__category {
+                            padding: 38px 44px 38px 44px;
+                        }
+                    }
+                }
+
+            }
+
+            .advantages__external {
+
+                .advantages__subscribe {
+                    column-gap: 121px;
+                    padding: 111px 0px 132px 0px;
+                    width: 1224px;
+
+                    .advantages__inner {
+
+                        .advantages__p1 {
+                            font-size: 30px;
+                            line-height: 36px;
+
+                            .advantages__span {
+                                font-size: 30px;
+                                line-height: 36px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .layout {
+            margin-bottom: 201px;
+
+            .container {
+                width: 1224px;
+
+                .layout__inner {
+                    .layout__p1 {
+                        font-size: 30px;
+                        line-height: 36px;
+
+                        .layout__span {
+                            font-size: 30px;
+                            line-height: 36px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contacts {
+            margin-bottom: 210px;
+
+            .container {
+                width: 1224px;
+
+                .contacts__title {
+                    font-size: 42px;
+                    line-height: 45px;
+                    margin-top: 92px;
+                }
+            }
+        }
+    }
+}

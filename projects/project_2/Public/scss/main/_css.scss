@@ -1,0 +1,387 @@
+@use "../shared_files/mixin" as *;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    .body2 {
+
+        .header {
+            .menu {
+                .menu__item {
+                    .main {
+                        color: #6E9C9F;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            .container {
+                .container1 {
+                    .menu {
+                        .menu__item {
+                            .main {
+                                color: #6E9C9F;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .section1 {
+            width: 100%;
+            margin-bottom: 130px;
+            @include sc_margin(0, 0,
+                0, 0,
+                10, 130,
+                0, 0,
+                250, 1366);
+
+            .container {
+                @include sc_width(300, 1110, 320, 1378);
+                max-width: 1110px;
+                margin: 0px auto;
+                display: flex;
+                column-gap: 22px;
+                justify-content: space-between;
+
+                .fon {
+                    z-index: -1;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    width: 44%;
+                    @include sc_height(443, 826, 650, 1600);
+                    background: rgba(241, 234, 220, 1);
+                }
+
+                .text {
+                    @include sc_margin(20, 145,
+                        0, 0,
+                        0, 0,
+                        0, 0,
+                        250, 1366);
+                    max-width: 563px;
+
+                    .text__p1 {
+                        @include sc_font_size(20, 55, 250, 1230);
+                        @include sc_line-height(28, 60.5, 250, 1366);
+                        @include sc_margin(0, 0,
+                            5, 15,
+                            15, 45,
+                            0, 0,
+                            250, 1366);
+                    }
+
+                    .text__p2 {
+                        font-size: 20px;
+                        @include sc_font_size(16, 20, 250, 1366);
+                        line-height: 28px;
+                        text-align: right;
+                        @include sc_margin(0, 0,
+                            0, 0,
+                            20, 52,
+                            5, 15,
+                            250, 1366);
+                        @include sc_width(254, 385, 250, 1366);
+                    }
+
+                    .text__div1 {
+                        max-width: 310px;
+                        max-height: 67px;
+                        @include sc_margin(0, 0,
+                            20, 163,
+                            14, 14,
+                            20, 90,
+                            250, 1366);
+                        display: grid;
+                        grid-template-columns: 67px 1fr;
+                        grid-template-rows: 67px;
+
+                        .text__b1>img {
+                            height: 100%;
+                        }
+
+                        a {
+                            display: contents;
+
+                            .text__b2 {
+                                border: 1px solid rgba(110, 156, 159, 1);
+                                background: rgba(110, 156, 159, 1);
+                                font-size: 17px;
+                                @include sc_font_size(14, 17, 250, 1366);
+                                line-height: 23.61px;
+                                transition: all 0.5s;
+                                font-weight: 600;
+                                color: white;
+
+                                &:hover {
+                                    background: rgba(80, 148, 152, 1);
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+
+                .photo {
+                    position: relative;
+
+                    .photo__img1 {
+                        @include sc_width(220, 410, 800, 1600);
+                        max-height: 646px;
+                        margin: 0px 0px 60px;
+                        float: right;
+                    }
+
+                    .photo__img2 {
+                        position: absolute;
+                        top: 123px;
+                        @include sc_right(-38, -105, 800, 1600);
+                        @include sc_width(108, 197, 800, 1600);
+                        max-height: 197px;
+                    }
+
+                    .photo__img3 {
+                        position: absolute;
+                        bottom: 0px;
+                        @include sc_left(-60, -130, 800, 1600);
+                        @include sc_width(135, 190, 800, 1600);
+                    }
+                }
+            }
+        }
+
+        .section2 {
+            width: 100%;
+            margin-bottom: calc(30px + (130 - 30) * ((100vw - 250px) / (1600 - 250)));
+
+
+            .container {
+                margin: 0px auto;
+                @include sc_width(300, 1110, 320, 1600);
+                display: flex;
+                flex-direction: column;
+
+                .text {
+                    @include sc_font_size(20, 40, 250, 1366);
+                    line-height: 44px;
+                    @include sc_margin(0, 0,
+                        0, 0,
+                        10, 92,
+                        0, 0,
+                        230, 1600);
+                    text-align: left;
+                }
+
+                .collection {
+                    display: flex;
+                    @include sc_column-gap(30, 30, 400, 1600);
+
+                    a>.collection__img {
+                        position: relative;
+                        width: 33.333%;
+
+
+                        div {
+                            opacity: 0;
+                            @include sc_height(130, 478, 400, 1600);
+                            width: 100%;
+                            position: absolute;
+                            transition: all 0.5s;
+                            display: flex;
+
+                            &:hover {
+                                opacity: 1;
+                                background: rgba(#6E9C9F, 0.77);
+                            }
+
+                            .fon {
+                                position: absolute;
+                                align-self: center;
+                                left: 45%;
+                                transition: all 0.5s;
+                            }
+                        }
+
+                        .img {
+                            // @include sc_height(130, 478, 400, 1600);
+                            max-height: calc(130px + (478 - 130) * ((100vw - 400px) / (1600 - 400)));
+                            width: 100%;
+                            z-index: -1;
+                            @include sc_margin(0, 0,
+                                0, 0,
+                                10, 24,
+                                0, 0,
+                                250, 1366);
+                        }
+
+                        .p1 {
+                            margin-bottom: 7px;
+                            color: black;
+                            font-weight: 600;
+                            @include sc_font_size(15, 20, 400, 1600);
+                            line-height: 28px;
+                        }
+
+                        .p2 {
+                            font-size: 15px;
+                            line-height: 21px;
+                            font-weight: 600;
+                        }
+
+                        .p1,
+                        .p2 {
+
+                            text-align: center;
+                            font-weight: 600;
+                        }
+                    }
+
+
+                }
+
+                a {
+                    display: contents;
+
+                    .open_shop {
+                        transition: all 0.5s;
+                        margin: calc(10px + (65 - 10) * ((100vw - 250px) / (1600 - 250))) auto 0px auto;
+                        width: 247px;
+                        height: 68px;
+                        color: #6E9C9F;
+                        background: transparent;
+                        border: 1px solid #6E9C9F;
+                        @include sc_font_size(14, 17, 250, 1366);
+                        line-height: 23.61px;
+                        font-weight: 600;
+
+                        &:hover {
+                            background: rgba(110, 156, 159, 1);
+                            color: white;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .section3 {
+            width: 100%;
+            margin-bottom: calc(30px + (130 - 30) * ((100vw - 250px) / (1600 - 250)));
+
+            .container {
+                @include sc_width(300, 1110, 320, 1600);
+                margin: 0px auto;
+
+                .container__text {
+                    @include sc_font_size(20, 40, 250, 1366);
+                    line-height: 44px;
+                    font-weight: 600;
+                    text-align: left;
+                    margin: 0px 0px calc(10px + (92 - 10) * ((100vw - 250px) / (1600 - 250))) 0px;
+                }
+
+                .services {
+                    display: flex;
+                    @include sc_column-gap(30, 75, 400, 1600);
+
+
+                    div {
+                        width: 33.333%;
+                    }
+
+                    div>img {
+                        margin: 0px 0px 37px 0px;
+                        max-width: 61px;
+                        max-height: 61px;
+                    }
+
+                    div>.p1 {
+                        margin-bottom: 24px;
+                        color: black;
+                        font-weight: 600;
+                        @include sc_font_size(20, 25, 250, 1600);
+                        line-height: 35px;
+                        text-align: left;
+                    }
+
+                    div>.p2 {
+                        font-size: 17px;
+                        line-height: 23.8px;
+                        text-align: left;
+                    }
+                }
+            }
+
+        }
+
+        .section4 {
+            width: 100%;
+            margin-bottom: calc(30px + (130 - 30) * ((100vw - 250px) / (1600 - 250)));
+
+            .container {
+                @include sc_width(300, 1110, 320, 1600);
+                margin: 0px auto;
+
+                .text {
+                    @include sc_font_size(20, 40, 250, 1600);
+                    line-height: 44px;
+                    margin-bottom: calc(10px + (92 - 10) * ((100vw - 250px) / (1600 - 250)));
+                }
+
+                .team {
+                    display: flex;
+                    justify-content: space-between;
+                    @include sc_column-gap(20, 124, 250, 1600);
+
+                    .team__img {
+                        width: 65.68%;
+                        height: max-content;
+
+                    }
+
+                    .team__text {
+                        align-self: center;
+
+                        .p1 {
+                            @include sc_font_size(20, 25, 250, 1600);
+                            line-height: 35px;
+                            margin-bottom: calc(10px + (28 - 10) * ((100vw - 250px) / (1600 - 250)));
+                        }
+
+                        .p2,
+                        .p3 {
+                            @include sc_font_size(14, 17, 250, 1600);
+                            line-height: 23.8px;
+                            margin-bottom: calc(10px + (28 - 10) * ((100vw - 250px) / (1600 - 250)));
+                        }
+
+                        .a1 {
+                            transition: all 0.5s;
+                            border-bottom: 1px solid white;
+                            display: inline;
+                            padding: 0px 0px 5px 0px;
+
+                            a {
+                                @include sc_font_size(14, 17, 250, 1600);
+                                line-height: 23.8px;
+                                color: rgba(110, 156, 159, 1);
+                            }
+
+                            &:hover {
+                                border-bottom: 1px solid rgba(206, 222, 223, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

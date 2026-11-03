@@ -1,0 +1,78 @@
+@use "../../../Public/scss/shared_file/mixin" as m;
+
+@media (max-width: 800px) {
+    .body .individual-construction .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 46% auto;
+        @include m.sc_height(634, 697, 250, 1366);
+
+        .individual-construction__part2 {
+            .individual-construction__img1 {
+                @include m.sc_top(134, 0, 250, 800);
+                @include m.sc_right(0, -41, 250, 800);
+                left: auto;
+            }
+        }
+    }
+}
+
+@media (min-width: 1366px) {
+    .body {
+
+        .individual-construction {
+            .container {
+                width: 1224px;
+                height: 546px;
+
+                .individual-construction__part1 {
+                    .individual-construction__p1 {
+                        margin-top: 52px;
+                        margin-bottom: 34px;
+                    }
+
+                    .individual-construction__p2 {
+                        font-size: 46px;
+                        line-height: 43px;
+                        margin-bottom: 22px;
+                    }
+
+                    .individual-construction__p3 {
+                        font-size: 16px;
+                        margin-bottom: 101px;
+                    }
+                }
+
+                .individual-construction__part2 {
+
+                    .individual-construction__img1 {
+                        left: 27px;
+                        height: 522px;
+                    }
+                }
+            }
+        }
+
+        .application {
+            margin-bottom: 70px;
+
+            .container {
+                width: 1224px;
+
+                .application__title-p1 {
+                    font-size: 38px;
+                    margin-bottom: 30px;
+                }
+
+                .application__title-p2 {
+                    font-size: 16px;
+                    margin-bottom: 63px;
+                }
+
+                .application__condition {
+                    padding: 44px 47px;
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+}

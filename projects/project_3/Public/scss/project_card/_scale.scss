@@ -1,0 +1,268 @@
+@use "../../../Public/scss/shared_file/mixin" as m;
+
+
+@media (max-width: 550px) {
+    .body .advantages__external .advantages__subscribe {
+        flex-direction: column;
+        row-gap: 122px;
+
+        .advantages__inner {
+            flex-basis: 0px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .body .project-information .container {
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 100%;
+        row-gap: 40px;
+        @include m.sc_column-gap(20, 40, 250, 800);
+    }
+}
+
+@media (max-width: 382px) {
+    .project_information__list-information div .project_information__text {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .container .project-information__image .project-information__nav .swiper .swiper-wrapper .swiper-slide {
+        border: 1px solid transparent;
+    }
+}
+
+@media (max-width: 999px) {
+    .body .payment .container .payment__part2 .payment__methods-payment {
+        grid-template-columns: 1fr 1fr;
+        @include m.sc_row-gap(10, 26, 250, 1366);
+    }
+
+    .body .payment .container .payment__part1 {
+        flex-direction: column;
+        row-gap: 35px;
+    }
+}
+
+@media (max-width: 620px) {
+    .body .payment .container .payment__part2 .payment__methods-payment {
+        grid-template-columns: 1fr;
+    }
+
+    .body .payment .container .payment__part1 .payment__title-secondary {
+        flex-direction: column;
+        row-gap: 29px;
+        align-items: start;
+    }
+}
+
+@media (max-width: 915px) {
+    .body .work .container .work__list {
+        grid-template-columns: 1fr;
+        row-gap: 86px;
+
+        .work__body {
+
+            .work__fon-text-blue {
+                display: block;
+                width: 29px;
+                height: 29px;
+                border-radius: 50%;
+                border: 9px solid #353D83;
+                background: white;
+            }
+
+            .work__fon-gray {
+                width: 93px;
+                rotate: 90deg;
+                top: 67px;
+                left: -32px;
+            }
+
+            .work__text2 {
+                position: absolute;
+                top: 0px;
+                left: 63px;
+            }
+
+            .work__text3 {
+                position: absolute;
+                top: 66px;
+                left: 63px;
+            }
+
+            .work__text1 {
+                display: none;
+            }
+
+        }
+
+        .work__body:nth-child(4) {
+            .work__fon-gray {
+                width: 93px;
+                rotate: 90deg;
+                top: 67px;
+                left: -32px;
+            }
+        }
+
+        .work__body:nth-child(6) {
+            .work__fon-gray {
+                display: none;
+            }
+
+            .work__fon-text-blue {
+                width: 59px;
+                height: 59px;
+                background: #353D83;
+                margin-left: -15px;
+
+                .work__mark {
+                    display: block;
+
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:1366px) {
+    .body {
+
+        .title {
+            margin-top: 52px;
+            margin-bottom: 31px;
+
+            .container {
+                width: 1224px;
+            }
+        }
+
+        .project-information {
+            margin-bottom: 39px;
+
+            .container {
+                width: 1224px;
+                column-gap: 36px;
+
+                .project-information__image {
+                    padding: 16px 20px 16px 20px;
+                }
+
+                .project-information__information {
+
+                    .project_information__list-information {
+
+                        .project_information__size,
+                        .project_information__square {
+                            padding: 21px 0px 21px 0px;
+
+                            .project_information__icon {
+                                margin-right: 20px;
+                            }
+
+                            .project_information__text {
+
+                                .project_information__information1 {
+                                    font-size: 18px;
+                                }
+
+                                .project_information__information2 {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .payment {
+            margin-bottom: 80px;
+
+            .container {
+                width: 1224px;
+                padding: 40px 57px 40px 57px;
+
+                .payment__part1 {
+
+                    .payment_title {
+                        font-size: 36px;
+                    }
+
+                    .payment__title-secondary {
+                        column-gap: 73px;
+
+                        .title-secondary__part1,
+                        .title-secondary__part2 {
+
+                            .payment__mark {
+                                margin-right: 17px;
+                            }
+                        }
+                    }
+                }
+
+                .payment__part2 {
+                    .payment__methods-payment {
+                        column-gap: 26px;
+
+                        .methods {
+                            row-gap: 36px;
+                            padding: 47px 0px 61px 0px;
+
+                            .methods__icon {
+                                font-size: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .work {
+            margin-bottom: 120px;
+
+            .container {
+                width: 1224px;
+
+                .work__title {
+                    font-size: 42px;
+                    margin-bottom: 68px;
+                }
+
+                .work__list {
+                    column-gap: 96px;
+                }
+            }
+        }
+
+        .advantages__external {
+            margin-top: 90px;
+
+            .advantages__img {
+                height: 339px;
+                left: 0px;
+            }
+
+            .advantages__subscribe {
+                column-gap: 121px;
+                padding: 111px 0px 132px 0px;
+                width: 1224px;
+
+                .advantages__inner {
+
+                    .advantages__p1 {
+                        font-size: 30px;
+                        line-height: 36px;
+
+                        .advantages__span {
+                            font-size: 30px;
+                            line-height: 36px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

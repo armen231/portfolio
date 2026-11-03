@@ -1,0 +1,16 @@
+@use "_mixin.scss" as *;
+@use "./fonts.scss" as *;
+
+@media(max-width: 0px) {
+    .body {
+        &.active {
+            overflow-y: hidden;
+        }
+    }
+
+    .body .wrapper {
+        &.active {
+            padding-right: 15px;
+        }
+    }
+}
