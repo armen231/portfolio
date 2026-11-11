@@ -1,0 +1,80 @@
+@use "../../../Public/scss/shared_file/mixin" as m;
+@use "../../../Public/scss/shared_file/mixin_max-width" as mw;
+
+@media (max-width: 620px) {
+    .body .contacts .container {
+        grid-template-columns: 100%;
+        row-gap: 49px;
+
+        .contacts__part1 {
+            .contacts__contact {
+                flex-direction: column;
+
+                .contacts__contact-part1 {
+                    width: 100%;
+                    border-bottom: 1px solid white;
+                    border-right: 1px solid #536FA4;
+                }
+
+                .contacts__contact-part2 {
+                    width: 100%;
+                    border-radius: 20px;
+
+                    .contacts__contact-p1 {
+                        display: none;
+                    }
+
+                    .contacts__contact-p1-1 {
+                        display: block;
+                    }
+                }
+
+
+            }
+        }
+
+        .contacts__part2 {
+            right: 5px;
+        }
+    }
+}
+
+@media (min-width: 1366px) {
+    .body {
+
+        .contacts {
+
+            .container {
+                @include mw.sc_width(250, 1224, 300, 1366);
+
+                .contacts__part1 {
+                    .contacts__p1 {
+                        @include mw.sc_margin-top(36, 52, 250, 1366);
+                        @include mw.sc_margin-bottom(26, 24, 250, 1366);
+                    }
+
+                    .contacts__p2 {
+                        @include mw.sc_font_size(25, 46, 250, 1366);
+                        @include mw.sc_line-height(32, 43, 250, 1366);
+                    }
+
+                    .contacts__p3 {
+                        @include mw.sc_font_size(14, 16, 250, 1366);
+                        @include mw.sc_margin-bottom(36, 69, 250, 1366);
+                    }
+                }
+
+                .contacts__part2 {
+                    @include mw.sc_margin-bottom(63, 52, 250, 1366);
+                    @include mw.sc_right(5, -37, 250, 1366);
+                    @include mw.sc_padding(63, 69,
+                        34, 83,
+                        74, 94,
+                        34, 83,
+                        250, 1366);
+                }
+            }
+        }
+
+    }
+}

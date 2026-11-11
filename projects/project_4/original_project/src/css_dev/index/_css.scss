@@ -1,0 +1,455 @@
+@use "../shared_file/mixin" as *;
+@use "../shared_file/fonts" as *;
+
+:root {
+    --background-color-button-active: #7c7cff;
+    --background-color-button-noActive: #f0f0f0;
+    --background-color-button-noActive2: white;
+    --background-color: #f0f0f0;
+    --border-radius: 10px;
+    --transition: 300ms;
+    --border-button-noActive: 1px solid transparent;
+    --border-button-active: 1px solid #7c7cff;
+}
+
+body {
+    display: flex;
+    position: relative;
+
+
+    .knowledgeBase__ElementAdd,
+    .knowledgeBase__ParameterAdd,
+    .knowledgeBase__SubElementAdd {
+        transition: var(--transition);
+
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        background-color: rgba(0, 0, 0, 0.313);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ElementAdd__popapAdd,
+        .ParameterAdd__popapAdd,
+        .SubElementAdd__popapAdd {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .popapAdd__header {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .popapAdd__header_input {
+                    font-size: inherit;
+                    padding: 5px 15px;
+                    border-radius: var(--border-radius);
+                    background-color: var(--background-color-button-noActive);
+                    text-wrap: wrap;
+                    height: auto;
+                }
+            }
+
+            .popapAdd__footer {
+                display: flex;
+                gap: 20px;
+                justify-content: end;
+
+                .popapAdd__footer_add,
+                .popapAdd__footer_close {
+                    font-size: inherit;
+                    padding: 5px 15px;
+                    transition: var(--transition);
+                    border-radius: var(--border-radius);
+                    background-color: var(--background-color-button-noActive);
+
+                    &:hover {
+                        color: white;
+                        background-color: var(--background-color-button-active);
+                    }
+                }
+            }
+        }
+
+        &.active {
+            left: 0%;
+        }
+
+
+    }
+
+    .knowledgeBase__ElementEdit,
+    .knowledgeBase__ParameterEdit,
+    .knowledgeBase__SubElementEdit {
+        transition: var(--transition);
+
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        background-color: rgba(0, 0, 0, 0.313);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ElementEdit__popapEdit,
+        .ParameterEdit__popapEdit,
+        .SubElementEdit__popapEdit {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .popapEdit__header {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .popapEdit__header_input {
+                    font-size: inherit;
+                    padding: 5px 15px;
+                    border-radius: var(--border-radius);
+                    background-color: var(--background-color-button-noActive);
+                }
+            }
+
+            .popapEdit__footer {
+                display: flex;
+                gap: 20px;
+                justify-content: end;
+
+                .popapEdit__footer_edit,
+                .popapEdit__footer_close {
+                    font-size: inherit;
+                    padding: 5px 15px;
+                    transition: var(--transition);
+                    border-radius: var(--border-radius);
+                    background-color: var(--background-color-button-noActive);
+
+                    &:hover {
+                        color: white;
+                        background-color: var(--background-color-button-active);
+                    }
+                }
+            }
+        }
+
+        &.active {
+            left: 0%;
+        }
+
+
+    }
+
+    .knowledgeBase__ElementDelet,
+    .knowledgeBase__ParameterDelet,
+    .knowledgeBase__SubElementDelet {
+        transition: var(--transition);
+
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        background-color: rgba(0, 0, 0, 0.313);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ElementDelet__popapDelet,
+        .ParameterDelet__popapDelet,
+        .SubElementDelet__popapDelet {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .popapDelet__header {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .popapDelet__header_input {
+                    font-size: inherit;
+                    padding: 5px 15px;
+                    border-radius: var(--border-radius);
+                    background-color: var(--background-color-button-noActive);
+                }
+            }
+
+            .popapDelet__footer {
+                display: flex;
+                gap: 20px;
+                justify-content: end;
+
+                .popapDelet__footer_delet,
+                .popapDelet__footer_close {
+                    font-size: inherit;
+                    padding: 5px 15px;
+                    transition: var(--transition);
+                    border-radius: var(--border-radius);
+                    background-color: var(--background-color-button-noActive);
+
+                    &:hover {
+                        color: white;
+                        background-color: var(--background-color-button-active);
+                    }
+                }
+            }
+        }
+
+        &.active {
+            left: 0%;
+        }
+
+
+    }
+
+    #root {
+        width: calc(100% - 20px);
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: hidden;
+        position: relative;
+
+
+        .nav {
+            display: flex;
+            gap: 20px;
+
+            .nav__button {
+                font-size: inherit;
+                padding: 10px;
+                border-radius: var(--border-radius);
+                background-color: var(--background-color-button-noActive);
+
+                &.active {
+                    background-color: var(--background-color-button-active);
+                    color: white;
+                }
+            }
+
+
+        }
+
+        .content {
+            flex-grow: 1;
+            background-color: var(--background-color);
+            border-radius: var(--border-radius);
+            display: flex;
+            overflow-y: auto;
+
+            .content__knowledgeBase {
+                width: calc(100% - 20px);
+                margin: 10px;
+                display: grid;
+                grid-template-columns: 26% 26% auto;
+                gap: 10px;
+
+                .knowledgeBase__elements {
+                    min-width: 217px;
+                }
+
+                .knowledgeBase__parameters {
+                    min-width: 217px;
+                }
+
+                .knowledgeBase__elements,
+                .knowledgeBase__parameters,
+                .knowledgeBase__subElements {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    overflow-y: auto;
+
+                    .elements__add,
+                    .parameters__add,
+                    .subElements__add {
+                        margin-right: 10px;
+                        width: calc(100% - 10px);
+                        align-items: center;
+                        padding: 15px 0px;
+                        background-color: var(--background-color-button-noActive);
+                        font-size: inherit;
+                        border-color: #7c7cff;
+                        transition: var(--transition);
+                        border-radius: var(--border-radius);
+                        background-color: var(--background-color-button-noActive2);
+
+                        &:hover {
+                            background-color: var(--background-color-button-active);
+                            color: white;
+                        }
+                    }
+
+                    .elements__element,
+                    .parameters__parameter,
+                    .subElements__subElement {
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 10px;
+                        border-radius: var(--border-radius);
+                        border: var(--background-color-button-noActive);
+                        border: var(--border-button-noActive);
+                        transition: var(--transition);
+                        background-color: white;
+                        margin-right: 10px;
+
+                        .subElements__text {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            p {
+                                width: fit-content;
+                                padding: 5px;
+                                border-radius: var(--border-radius);
+                                border: 2px solid var(--background-color);
+                            }
+                        }
+
+                        .element__options,
+                        .parameter__options,
+                        .subElements__options {
+                            display: flex;
+                            gap: 5px;
+
+                            .options__img {
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50%;
+                                transition: var(--transition);
+                                border: var(--border-button-noActive);
+
+
+                                &:hover {
+                                    border: var(--border-button-active);
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            border: var(--border-button-active);
+                        }
+
+                        &.active {
+                            background-color: var(--background-color-button-active);
+                            color: white;
+                        }
+                    }
+                }
+
+                .knowledgeBase__parameter {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    overflow-y: auto;
+                }
+            }
+
+            .content__SearchInformation {
+                width: calc(100% - 20px);
+                margin: 10px;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                gap: 10px;
+
+                .searchInformation__question {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .question__array {
+                        display: flex;
+                        gap: 20px;
+
+                        .options__img {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            transition: var(--transition);
+                            border: var(--border-button-noActive);
+
+
+                            &:hover {
+                                border: var(--border-button-active);
+                            }
+                        }
+                    }
+
+                    .question__text {
+                        border-radius: var(--border-radius);
+                        font-size: inherit;
+                        padding: 10px;
+                    }
+
+                    .question__proposedText{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+
+                        .proposedText__p{
+                            padding: 10px;
+                            border-radius: var(--border-radius);
+                            font-size: inherit;
+                            color: black;
+                            transition: var(--transition);
+                            overflow-y: scroll;
+
+                            &:hover{
+                                color: white;
+                                background-color: var(--background-color-button-active);
+                            }
+                        }
+                    }
+                }
+
+                .searchInformation__result {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    overflow-y: scroll;
+
+                    .result {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        align-items: start;
+                        justify-content: space-between;
+                        padding: 10px;
+                        border-radius: var(--border-radius);
+                        border: var(--background-color-button-noActive);
+                        border: var(--border-button-noActive);
+                        transition: var(--transition);
+                        background-color: white;
+                        margin-right: 10px;
+
+                        p {
+                            width: fit-content;
+                            padding: 5px;
+                            border-radius: var(--border-radius);
+                            border: 2px solid var(--background-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

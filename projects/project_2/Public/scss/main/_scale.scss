@@ -1,0 +1,240 @@
+@use "../shared_files/mixin" as m;
+
+@media (max-width: 650px) {
+    body .body2 .section1 .container .text .text__p2 {
+        width: 80%;
+        @include m.sc_margin(0, 0,
+            0, 0,
+            20, 52,
+            5, 15,
+            350, 1366);
+    }
+
+    body .body2 .section1 .container .photo {
+        display: none;
+    }
+}
+
+
+@media (max-width: 670px) {
+    body .body2 .section3 .container .services {
+        flex-direction: column;
+        column-gap: 0px;
+        row-gap: 30px;
+
+        div {
+            width: 100%;
+        }
+    }
+}
+
+
+@media (max-width: 400px) {
+    body .body2 .section2 .container .collection {
+        flex-direction: column;
+        column-gap: 0px;
+        row-gap: 30px;
+        align-items: center;
+
+        a>.collection__img {
+            @include m.sc_width(204, 352, 250, 400);
+
+            div {
+                @include m.sc_height(280, 480, 250, 400);
+
+                img {
+                    display: none;
+                }
+            }
+
+            .img {
+                // @include m.sc_height(280, 480, 250, 400);
+                max-height: calc(280px + (480 - 280) * ((100vw - 250px) / (400 - 250)))
+            }
+        }
+
+    }
+
+
+}
+
+
+@media (max-width: 800px) {
+    body .body2 .section4 .container .team {
+        flex-direction: column;
+        column-gap: 0px;
+        row-gap: 30px;
+
+        .team__img {
+            width: 100%;
+        }
+    }
+}
+
+
+@media (min-width: 1600px) {
+    body {
+
+        .body2 {
+
+            .section1 {
+                margin: 0px 0px 130px 0px;
+
+                .container {
+                    width: 1110px;
+
+                    .fon {
+                        height: 826px;
+                    }
+
+                    .text {
+                        margin: 145px 0px 0px 0px;
+
+                        .text__p1 {
+                            font-size: 55px;
+                            line-height: 60.5px;
+                            margin: 0px 15px 45px 0px;
+                        }
+
+                        .text__p2 {
+                            font-size: 20px;
+                            margin: 0px 0px 52px 15px;
+                            width: 385px;
+                        }
+
+                        .text__div1 {
+                            margin: 0px 163px 14px 90px;
+
+                            .text__b2 {
+                                font-size: 17px;
+                            }
+
+
+                        }
+                    }
+
+                    .photo {
+
+                        .photo__img1 {
+                            width: 410px;
+                        }
+
+                        .photo__img2 {
+                            right: -105px;
+                            width: 197px;
+                        }
+
+                        .photo__img3 {
+                            left: -130px;
+                            width: 190px;
+                        }
+                    }
+                }
+            }
+
+            .section2 {
+                margin-bottom: 130px;
+
+
+                .container {
+                    width: 1110px;
+
+                    .text {
+                        font-size: 40px;
+                        margin: 0px 0px 92px 0px;
+                    }
+
+                    .collection {
+                        column-gap: 30px;
+
+                        .collection__img {
+
+                            div {
+                                height: 478px;
+                            }
+
+                            .img {
+                                height: 478px;
+                                margin: 0px 0px 24px 0px;
+                            }
+
+                            .p1 {
+                                font-size: 17px;
+                            }
+                        }
+
+
+                    }
+
+                    .open_shop {
+                        margin: 65px auto 0px auto;
+                        font-size: 17px;
+                    }
+                }
+            }
+
+            .section3 {
+                width: 100%;
+                margin-bottom: 130px;
+
+                .container {
+                    width: 1110px;
+
+                    .container__text {
+                        font-size: 40px;
+                        margin: 0px 0px 92px 0px;
+                    }
+
+                    .services {
+                        column-gap: 75px;
+
+                        div>.p1 {
+                            font-size: 25px;
+                        }
+                    }
+                }
+
+            }
+
+            .section4 {
+                margin-bottom: 130px;
+
+                .container {
+                    width: 1110px;
+
+                    .text {
+                        font-size: 40px;
+                        line-height: 44px;
+                        margin-bottom: 92px;
+                    }
+
+                    .team {
+                        column-gap: 124px;
+
+                        .team__text {
+
+                            .p1 {
+                                font-size: 25px;
+                                margin-bottom: 28px;
+                            }
+
+                            .p2,
+                            .p3 {
+                                font-size: 17px;
+                                line-height: 23.8px;
+                                margin-bottom: 28px;
+                            }
+
+                            .a1 {
+
+                                a {
+                                    font-size: 17;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

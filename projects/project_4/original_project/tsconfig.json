@@ -1,0 +1,69 @@
+{
+  "include": [
+    "**/*",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*"
+  ],
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "es2022"],
+    "types": ["node"],
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "rootDirs": [".", "./.react-router/types"],
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    //выдаст ошибку если обнаружен недопустимы код / false - включает
+    "allowUnreachableCode": false,
+    // При включённой функции exactOptionalPropertyTypes в TypeScript применяются более строгие правила 
+    // обработки свойств в type или interfaces с префиксом ?. / true - включает
+    "exactOptionalPropertyTypes": true,
+    // Сообщайте об ошибках при переходе к следующему случаю в операторах switch. 
+    // Гарантирует, что любой непустой случай внутри оператора switch включает в себя 
+    // либо break, либо return, либо throw / true - включает
+    "noFallthroughCasesInSwitch": true,
+    // при активной опции выводит ошибку, если вывод типов 
+    // в функции (в параметрах) установил принадлежность типа члена к any.  / true - включает
+    "noImplicitAny": false,
+    // TypeScript будет проверять все пути выполнения кода в функции, чтобы убедиться, что они возвращают значение.  / true - включает
+    "noImplicitReturns": true,
+    //  активная опция заставляет компилятор выводить сообщения о неиспользуемых элементах кода. 
+    // Простыми словами, если в коде что-то объявлено, но не используется, будет возникать ошибка. / true - включает
+    "noUnusedLocals": true,
+    // Сообщать об ошибках неиспользуемых параметров в функциях. / true - включает
+    "noUnusedParameters": true,
+    // При установке TypeScript проверяет, что встроенные методы функций call, bind и apply
+    //  вызываются с правильным аргументом для базовой функции / true - включает
+    "strictBindCallApply": true,
+    // При включении этого флага параметры функций проверяются более корректно. / true - включает
+    "strictFunctionTypes": false,
+    // Когда strictNullChecks является true имеют собственные типы, и вы 
+    // получите ошибку типа, если попытаетесь использовать их там
+    // где ожидается конкретное значение. / true - включает
+    "strictNullChecks": true,
+    // Если установлено значение true, TypeScript выдаст ошибку
+    // если свойство класса было объявлено, но не задано в конструкторе. / true - включает
+    "strictPropertyInitialization": true,
+    // Разрешите импортировать файлы JavaScript в ваш проект, а не только файлы .ts и .tsx . / true - включает
+    "allowJs": true,
+    // данная опция говорит компилятору, что код, который находится в файлах 
+    // с расширением .js, также нужно проверять на ошибки. / true - включает
+    "checkJs": false,
+    // Разрешить искусственный импорт по умолчанию / true - включает
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true, /* Создайте файлы исходной карты для создаваемых файлов JavaScript. */
+    "target": "es2022",
+    "experimentalDecorators": true,
+  },
+  "exclude": [
+    "./node_modules/**/*.*"
+  ]
+}

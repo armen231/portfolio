@@ -1,0 +1,293 @@
+@use "../../../Public/scss/shared_file/mixin" as *;
+
+// font-family: 'Inter', sans-serif;
+// font-family: 'Jost', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Sintony', sans-serif;
+
+.body {
+
+    .individual-construction {
+        margin-bottom: 75px;
+        position: relative;
+        overflow-x: clip;
+
+        .individual-construction__fon {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 1366px;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.25;
+            filter: blur(24.5px);
+        }
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            @include sc_height(410, 546, 800, 1366);
+            margin: 0px auto;
+            display: grid;
+            grid-template-columns: 41% auto;
+            column-gap: 10px;
+
+            .individual-construction__part1 {
+                .individual-construction__p1 {
+                    @include sc_margin-top(36, 52, 250, 1366);
+                    color: rgba(0, 0, 0, 0.80);
+                    font-family: Montserrat;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include sc_margin-bottom(46, 34, 250, 1366);
+                }
+
+                .individual-construction__p2 {
+                    color: #000;
+                    font-family: Inter;
+                    @include sc_font_size(25, 46, 250, 1366);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 32px;
+                    @include sc_line-height(32, 43, 250, 1366);
+                    @include sc_margin-bottom(28, 22, 250, 1366);
+                }
+
+                .individual-construction__p3 {
+                    color: rgba(32, 32, 32, 0.80);
+                    font-family: Montserrat;
+                    @include sc_font_size(14, 16, 250, m1366ax_w);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include sc_margin-bottom(36, 101, 250, 1366);
+                }
+            }
+
+            .individual-construction__part2 {
+                position: relative;
+
+                .individual-construction__img1 {
+                    position: absolute;
+                    top: 13px;
+                    left: 27px;
+                    @include sc_left(-67, 27, 800, 1366);
+                    @include sc_height(349, 522, 800, 1366);
+                }
+            }
+        }
+    }
+
+    .application {
+        width: 100%;
+        @include sc_margin-bottom(94, 70, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .application__title-p1 {
+                color: #000;
+                font-family: Inter;
+                @include sc_font_size(20, 38, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                line-height: 40px;
+                /* 105.263% */
+                @include sc_margin-bottom(22, 30, 250, 1366);
+
+                .application__title-span1 {
+                    font-weight: 400;
+                }
+            }
+
+            .application__title-p2 {
+                color: #000;
+                font-family: Montserrat;
+                @include sc_font_size(14, 16, 250, 1366);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @include sc_margin-bottom(51, 63, 250, 1366);
+            }
+
+            .application__condition {
+                border-radius: 20px;
+                background: #F1F1F6;
+                @include sc_padding(50, 44,
+                    25, 47,
+                    50, 44,
+                    25, 47,
+                    250, 1366);
+                margin-bottom: 36px;
+                color: #000;
+                font-family: Montserrat;
+                @include sc_font_size(16, 23, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+
+                .application__text1 {
+                    margin-bottom: 36px;
+                }
+
+                .application__text2,
+                .application__text3,
+                .application__text4 {
+                    font-weight: 400;
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                }
+
+                .application__text4 {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+.body-dark {
+
+    .individual-construction {
+        margin-bottom: 75px;
+        position: relative;
+        overflow-x: clip;
+
+        .individual-construction__fon {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 1366px;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.25;
+            filter: blur(24.5px);
+        }
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            @include sc_height(410, 546, 800, 1366);
+            margin: 0px auto;
+            display: grid;
+            grid-template-columns: 41% auto;
+            column-gap: 10px;
+
+            .individual-construction__part1 {
+                .individual-construction__p1 {
+                    @include sc_margin-top(36, 52, 250, 1366);
+                    color: rgba(255, 255, 255, 0.8);
+                    font-family: Montserrat;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include sc_margin-bottom(46, 34, 250, 1366);
+                }
+
+                .individual-construction__p2 {
+                    color: #ffffff;
+                    font-family: Inter;
+                    @include sc_font_size(25, 46, 250, 1366);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 32px;
+                    @include sc_line-height(32, 43, 250, 1366);
+                    @include sc_margin-bottom(28, 22, 250, 1366);
+                }
+
+                .individual-construction__p3 {
+                    color: rgba(231, 231, 231, 0.8);
+                    font-family: Montserrat;
+                    @include sc_font_size(14, 16, 250, m1366ax_w);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include sc_margin-bottom(36, 101, 250, 1366);
+                }
+            }
+
+            .individual-construction__part2 {
+                position: relative;
+
+                .individual-construction__img1 {
+                    position: absolute;
+                    top: 13px;
+                    left: 27px;
+                    @include sc_left(-67, 27, 800, 1366);
+                    @include sc_height(349, 522, 800, 1366);
+                }
+            }
+        }
+    }
+
+    .application {
+        width: 100%;
+        @include sc_margin-bottom(94, 70, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .application__title-p1 {
+                color: #ffffff;
+                font-family: Inter;
+                @include sc_font_size(20, 38, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                line-height: 40px;
+                /* 105.263% */
+                @include sc_margin-bottom(22, 30, 250, 1366);
+
+                .application__title-span1 {
+                    font-weight: 400;
+                }
+            }
+
+            .application__title-p2 {
+                color: #ffffff;
+                font-family: Montserrat;
+                @include sc_font_size(14, 16, 250, 1366);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @include sc_margin-bottom(51, 63, 250, 1366);
+            }
+
+            .application__condition {
+                border-radius: 20px;
+                background: #272728;
+                @include sc_padding(50, 44,
+                    25, 47,
+                    50, 44,
+                    25, 47,
+                    250, 1366);
+                margin-bottom: 36px;
+                color: #ffffff;
+                font-family: Montserrat;
+                @include sc_font_size(16, 23, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+
+                .application__text1 {
+                    margin-bottom: 36px;
+                }
+
+                .application__text2,
+                .application__text3,
+                .application__text4 {
+                    font-weight: 400;
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                }
+
+                .application__text4 {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}

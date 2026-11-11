@@ -1,0 +1,118 @@
+
+@mixin sc_font_size($min_value, $max_value, $min_width, $max_width) {
+    font-size: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_line-height($min_value, $max_value, $min_width, $max_width) {
+    line-height: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_font-weight($min_value, $max_value, $min_width, $max_width) {
+    font-weight: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+@mixin sc_width($min_value, $max_value, $min_width, $max_width) {
+    max-width: $max_value * 1px;
+    width: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_height($min_value, $max_value, $min_width, $max_width) {
+    max-height: $max_value * 1px;
+    height: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+@mixin sc_margin($min_value_up, $max_value_up, 
+    $min_value_right, $max_value_right,
+    $min_value_down, $max_value_down,
+    $min_value_left, $max_value_left, $min_width, $max_width) {
+    
+    margin: 
+    calc($min_value_up * 1px + ($max_value_up - $min_value_up) * ((100vw - $min_width * 1px) / ($max_width - $min_width)))
+    calc($min_value_right * 1px + ($max_value_right - $min_value_right) * ((100vw - $min_width * 1px) / ($max_width - $min_width)))
+    calc($min_value_down * 1px + ($max_value_down - $min_value_down) * ((100vw - $min_width * 1px) / ($max_width - $min_width)))
+    calc($min_value_left * 1px + ($max_value_left - $min_value_left) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+@mixin sc_padding($min_value_up, $max_value_up,
+    $min_value_right, $max_value_right,
+    $min_value_down, $max_value_down,
+    $min_value_left, $max_value_left, $min_width, $max_width) {
+
+    padding:
+    calc($min_value_up * 1px + ($max_value_up - $min_value_up) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) 
+    calc($min_value_right * 1px + ($max_value_right - $min_value_right) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) 
+    calc($min_value_down * 1px + ($max_value_down - $min_value_down) * ((100vw - $min_width * 1px) / ($max_width - $min_width))) 
+    calc($min_value_left * 1px + ($max_value_left - $min_value_left) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+
+@mixin sc_top($min_value, $max_value, $min_width, $max_width) {
+    top: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_left($min_value, $max_value, $min_width, $max_width) {
+    left: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_right($min_value, $max_value, $min_width, $max_width) {
+    right: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_bottom($min_value, $max_value, $min_width, $max_width) {
+    bottom: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+
+
+@mixin sc_border-radius($min_value, $max_value, $min_width, $max_width) {
+    border-radius: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+
+
+
+
+
+@mixin sc_column-gap($min_value, $max_value, $min_width, $max_width) {
+    column-gap: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}
+
+@mixin sc_row-gap($min_value, $max_value, $min_width, $max_width) {
+    row-gap: calc($min_value * 1px + ($max_value - $min_value) * ((100vw - $min_width * 1px) / ($max_width - $min_width)));
+    // calc(10px + (50 - 10) * ((100vw - 320px) / (1366 - 320)));
+}

@@ -1,0 +1,929 @@
+@use "../../../Public/scss/shared_file/mixin" as *;
+
+// font-family: 'Inter', sans-serif;
+// font-family: 'Jost', sans-serif;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Sintony', sans-serif;
+
+.body {
+    overflow-x: hidden;
+
+    .title {
+        width: 100%;
+        @include sc_margin-top(36, 52, 250, 1366);
+        @include sc_margin-bottom(30, 31, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .title__p1 {
+                font-family: Montserrat;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0em;
+                color: rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+
+    .project-information {
+        width: 100%;
+        @include sc_margin-bottom(36, 39, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            @include sc_column-gap(10, 36, 850, 1366);
+
+            .project-information__image {
+                width: 100%;
+                border-radius: 15px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                background: transparent;
+                @include sc_padding(9, 16,
+                    11, 20,
+                    9, 16,
+                    11, 20,
+                    250, 1366);
+
+                .project_information__main-image {
+                    width: 100%;
+                    border-radius: 15px;
+                    @include sc_margin-bottom(9, 17, 250, 1366);
+                }
+
+                .project-information__nav {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    .swiper-button-prev {
+                        rotate: 180deg;
+                    }
+
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        height: 100%;
+                        margin-top: 0px;
+                        color: black;
+
+                        &::after {
+                            content: "";
+                        }
+                    }
+
+                    .swiper {
+                        width: 80%;
+                        margin: 0px auto;
+
+                        .swiper-wrapper {
+                            align-items: center;
+
+                            .swiper-slide {
+                                border-radius: 15px;
+                                border: 5px solid transparent;
+                            }
+                        }
+                    }
+
+
+                }
+
+
+
+                // .project-information__nav {
+                //     width: 100%;
+                //     display: grid;
+                //     grid-template-columns: 5% auto 5%;
+                //     @include sc_column-gap(11, 23, 250, 1366);
+                //     align-items: center;
+
+                //     margin-left: 0px;
+                //     margin-right: 0px;
+                //     position: static;
+
+
+                //     .project_information__list-image {
+                //         width: 85%;
+                //         display: flex;
+                //         column-gap: 11px;
+                //         overflow-x: hidden;
+                //         margin: 0px auto;
+
+                //         position: static;
+
+                //         img {
+                //             // @include sc_height(47, 86, 250, 1366);
+                //             // @include sc_width(68, 121, 250, 1366);
+                //             height: 47px;
+                //             // width: 68px;
+                //         }
+                //     }
+                // }
+
+                // .project_information__arrow1,
+                // .project_information__arrow2 {
+                //     position: static;
+                //     left: 0px;
+                //     right: 0px;
+                //     width: 100%;
+                //     height: 100%;
+                //     margin-top: 0px;
+                //     cursor: default;
+                //     display: block;
+                //     color: black;
+                // }
+
+                // .project_information__arrow1 {
+                //     rotate: 180deg;
+                // }
+            }
+
+            .project-information__information {
+                width: 100%;
+
+                .project_information__list-information {
+                    margin: 0px 15px 10px 15px;
+
+                    .project_information__size,
+                    .project_information__square {
+                        @include sc_padding(11, 21,
+                            0, 0,
+                            11, 21,
+                            0, 0,
+                            250, 1366);
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+                        display: flex;
+                        align-items: center;
+
+                        .project_information__icon {
+                            font-size: 27px;
+                            @include sc_margin-right(17, 20, 250, 1366);
+                        }
+
+                        .project_information__text {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 80%;
+
+                            .project_information__information1 {
+                                color: rgba(0, 0, 0, 0.80);
+                                font-family: Montserrat;
+                                @include sc_font_size(14, 18, 250, 1366);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+                            }
+
+                            .project_information__information2 {
+                                color: #000;
+                                font-family: Inter;
+                                @include sc_font_size(14, 18, 250, 1366);
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: normal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .payment {
+        width: 100%;
+        @include sc_margin-bottom(72, 80, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+            border-radius: 20px;
+            background: #435D8F;
+            @include sc_padding(51, 40,
+                21, 57,
+                51, 40,
+                21, 57,
+                250, 1366);
+
+            .payment__part1 {
+                margin-bottom: 35px;
+                display: flex;
+                justify-content: space-between;
+
+                .payment_title {
+                    color: #FFF;
+                    font-family: Inter;
+                    @include sc_font_size(30, 36, 250, 1366);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+
+                .payment__title-secondary {
+                    display: flex;
+                    @include sc_column-gap(20, 73, 250, 1366);
+                    align-items: center;
+
+                    .title-secondary__part1,
+                    .title-secondary__part2 {
+                        display: flex;
+
+                        .payment__mark {
+                            font-size: 40px;
+                            @include sc_margin-right(13, 17, 250, 1366);
+                            color: white;
+                            position: relative;
+                            margin-top: -13px;
+                        }
+
+                        .payment__text {
+                            color: #FFF;
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+                    }
+                }
+            }
+
+            .payment__part2 {
+                .payment__methods-payment {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    @include sc_column-gap(10, 26, 250, 1366);
+
+                    .methods {
+                        background: rgba(83, 111, 164, 1);
+                        border-radius: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        @include sc_row-gap(36, 36, 250, 1366);
+                        @include sc_padding(34, 47,
+                            0, 0,
+                            47, 61,
+                            0, 0,
+                            250, 1366);
+
+                        .methods__icon {
+                            color: white;
+                            @include sc_font_size(56, 100, 250, 1366);
+                            margin: 0px auto;
+                        }
+
+                        .payment__methods-text {
+                            color: #FFF;
+                            font-family: Inter;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .work {
+        width: 100%;
+        @include sc_margin-bottom(98, 120, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .work__title {
+                color: #000;
+                font-family: Inter;
+                @include sc_font_size(36, 42, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                line-height: 36px;
+                @include sc_margin-bottom(58, 68, 250, 1366);
+            }
+
+            .work__list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 76px;
+                @include sc_column-gap(10, 96, 915, 1366);
+
+                .work__body {
+                    position: relative;
+
+                    .work__fon-text-blue {
+                        display: none;
+                    }
+
+                    .work__fon-gray {
+                        height: 2px;
+                        position: absolute;
+                        width: 130%;
+                        background: rgba(53, 61, 131, 0.20);
+                        top: 20px;
+                    }
+
+                    .work__text1 {
+                        color: #FFF;
+                        font-family: Montserrat;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        padding: 8px 17px;
+                        background: #353D83;
+                        filter: drop-shadow(3px 4px 11px rgba(0, 0, 0, 0.10));
+                        margin-bottom: 32px;
+                        width: min-content;
+                        border-radius: 50%;
+                    }
+
+                    .work__text2 {
+                        color: rgba(0, 0, 0, 0.80);
+                        font-family: Inter;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 20px;
+                        /* 111.111% */
+                        margin-bottom: 17px;
+                    }
+
+                    .work__text3 {
+                        color: rgba(0, 0, 0, 0.60);
+                        font-family: Montserrat;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 16px;
+                        /* 114.286% */
+
+                    }
+                }
+
+                .work__body:nth-child(4) {
+                    .work__fon-gray {
+                        left: -61px;
+                        width: 150%;
+                    }
+                }
+
+                .work__body:nth-child(6) {
+                    .work__text1 {
+                        font-size: 30px;
+                        padding: 11px 19px;
+                        margin-bottom: 16px;
+                        margin-top: -10px;
+                    }
+
+                    .work__fon-gray {
+                        display: none;
+                    }
+
+                    .work__fon-text-blue {
+                        .work__mark {
+                            color: white;
+                            font-size: 42px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .advantages__external {
+        background: rgba(246, 246, 249, 0.9);
+        position: relative;
+        @include sc_margin-top(90, 90, 250, 1366);
+        overflow-x: clip;
+
+        .advantages__img {
+            @include sc_height(339, 339, 250, 1366);
+            opacity: 0.5;
+            filter: blur(24.5px);
+            position: absolute;
+            top: 0px;
+            @include sc_left(-1100, 0, 250, 1366);
+            height: 100%;
+        }
+
+        .advantages__subscribe {
+            position: relative;
+            z-index: 1;
+            margin: 0px auto;
+            @include sc_width(250, 1224, 300, 1366);
+            @include sc_padding(112, 111,
+                0, 0,
+                155, 132,
+                0, 0,
+                250, 1366);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include sc_column-gap(10, 121, 250, 1366);
+
+            .advantages__inner {
+                flex-basis: 609px;
+
+                .advantages__p1 {
+                    font-family: Inter;
+                    @include sc_font_size(20, 30, 250, 1366);
+                    font-weight: 700;
+                    @include sc_line-height(20, 36, 250, 1366);
+                    letter-spacing: 0em;
+                    margin-bottom: 30px;
+
+                    .advantages__span {
+                        font-family: Inter;
+                        @include sc_font_size(20, 30, 250, 1366);
+                        font-weight: 400;
+                        @include sc_line-height(20, 36, 250, 1366);
+                        letter-spacing: 0em;
+                    }
+                }
+
+                .advantages__p2 {
+                    font-family: Montserrat;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    letter-spacing: 0em;
+                }
+            }
+        }
+    }
+}
+
+.body-dark {
+
+    .title {
+        width: 100%;
+        @include sc_margin-top(36, 52, 250, 1366);
+        @include sc_margin-bottom(30, 31, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .title__p1 {
+                font-family: Montserrat;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0em;
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+
+    .project-information {
+        width: 100%;
+        @include sc_margin-bottom(36, 39, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            @include sc_column-gap(10, 36, 850, 1366);
+
+            .project-information__image {
+                width: 100%;
+                border-radius: 15px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                background: transparent;
+                @include sc_padding(9, 16,
+                    11, 20,
+                    9, 16,
+                    11, 20,
+                    250, 1366);
+
+                .project_information__main-image {
+                    width: 100%;
+                    border-radius: 15px;
+                    @include sc_margin-bottom(9, 17, 250, 1366);
+                }
+
+                .project-information__nav {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    .swiper-button-prev {
+                        rotate: 180deg;
+                    }
+
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        height: 100%;
+                        margin-top: 0px;
+                        color: white;
+
+                        &::after {
+                            content: "";
+                        }
+                    }
+
+                    .swiper {
+                        width: 80%;
+                        margin: 0px auto;
+                        align-items: center;
+
+                        .swiper-wrapper {
+
+                            .swiper-slide {
+                                border-radius: 15px;
+                                border: 5px solid transparent;
+                            }
+                        }
+                    }
+
+
+                }
+
+
+
+                // .project-information__nav {
+                //     width: 100%;
+                //     display: grid;
+                //     grid-template-columns: 5% auto 5%;
+                //     @include sc_column-gap(11, 23, 250, 1366);
+                //     align-items: center;
+
+                //     margin-left: 0px;
+                //     margin-right: 0px;
+                //     position: static;
+
+
+                //     .project_information__list-image {
+                //         width: 85%;
+                //         display: flex;
+                //         column-gap: 11px;
+                //         overflow-x: hidden;
+                //         margin: 0px auto;
+
+                //         position: static;
+
+                //         img {
+                //             // @include sc_height(47, 86, 250, 1366);
+                //             // @include sc_width(68, 121, 250, 1366);
+                //             height: 47px;
+                //             // width: 68px;
+                //         }
+                //     }
+                // }
+
+                // .project_information__arrow1,
+                // .project_information__arrow2 {
+                //     position: static;
+                //     left: 0px;
+                //     right: 0px;
+                //     width: 100%;
+                //     height: 100%;
+                //     margin-top: 0px;
+                //     cursor: default;
+                //     display: block;
+                //     color: black;
+                // }
+
+                // .project_information__arrow1 {
+                //     rotate: 180deg;
+                // }
+            }
+
+            .project-information__information {
+                width: 100%;
+
+                .project_information__list-information {
+                    margin: 0px 15px 10px 15px;
+
+                    .project_information__size,
+                    .project_information__square {
+                        @include sc_padding(11, 21,
+                            0, 0,
+                            11, 21,
+                            0, 0,
+                            250, 1366);
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+                        display: flex;
+                        align-items: center;
+
+                        .project_information__icon {
+                            font-size: 27px;
+                            @include sc_margin-right(17, 20, 250, 1366);
+                            color: white;
+                        }
+
+                        .project_information__text {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 80%;
+
+                            .project_information__information1 {
+                                color: rgba(255, 255, 255, 0.8);
+                                font-family: Montserrat;
+                                @include sc_font_size(14, 18, 250, 1366);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+                            }
+
+                            .project_information__information2 {
+                                color: #ffffff;
+                                font-family: Inter;
+                                @include sc_font_size(14, max_18v, 250, 1366);
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: normal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .payment {
+        width: 100%;
+        @include sc_margin-bottom(72, 80, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+            border-radius: 20px;
+            background: #435D8F;
+            @include sc_padding(51, 40,
+                21, 57,
+                51, 40,
+                21, 57,
+                250, 1366);
+
+            .payment__part1 {
+                margin-bottom: 35px;
+                display: flex;
+                justify-content: space-between;
+
+                .payment_title {
+                    color: #ffffff;
+                    font-family: Inter;
+                    @include sc_font_size(30, 36, 250, 1366);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+
+                .payment__title-secondary {
+                    display: flex;
+                    @include sc_column-gap(20, 73, 250, 1366);
+                    align-items: center;
+
+                    .title-secondary__part1,
+                    .title-secondary__part2 {
+                        display: flex;
+
+                        .payment__mark {
+                            font-size: 40px;
+                            @include sc_margin-right(13, 17, 250, 1366);
+                            color: white;
+                            position: relative;
+                            margin-top: -13px;
+                        }
+
+                        .payment__text {
+                            color: #FFF;
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+                    }
+                }
+            }
+
+            .payment__part2 {
+                .payment__methods-payment {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    @include sc_column-gap(10, 26, 250, 1366);
+
+                    .methods {
+                        background: rgba(83, 111, 164, 1);
+                        border-radius: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        @include sc_row-gap(36, 36, 250, 1366);
+                        @include sc_padding(34, 47,
+                            0, 0,
+                            47, 61,
+                            0, 0,
+                            250, 1366);
+
+                        .methods__icon {
+                            color: white;
+                            @include sc_font_size(56, 100, 250, 1366);
+                            margin: 0px auto;
+                        }
+
+                        .payment__methods-text {
+                            color: #FFF;
+                            font-family: Inter;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .work {
+        width: 100%;
+        @include sc_margin-bottom(98, 120, 250, 1366);
+
+        .container {
+            @include sc_width(250, 1224, 300, 1366);
+            margin: 0px auto;
+
+            .work__title {
+                color: #ffffff;
+                font-family: Inter;
+                @include sc_font_size(36, 42, 250, 1366);
+                font-style: normal;
+                font-weight: 700;
+                line-height: 36px;
+                @include sc_margin-bottom(58, 68, 250, 1366);
+            }
+
+            .work__list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 76px;
+                @include sc_column-gap(10, 96, 915, 1366);
+
+                .work__body {
+                    position: relative;
+
+                    .work__fon-text-blue {
+                        display: none;
+                    }
+
+                    .work__fon-gray {
+                        height: 2px;
+                        position: absolute;
+                        width: 130%;
+                        background: rgba(53, 61, 131, 0.20);
+                        top: 20px;
+                    }
+
+                    .work__text1 {
+                        color: #FFF;
+                        font-family: Montserrat;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        padding: 8px 17px;
+                        background: #353D83;
+                        filter: drop-shadow(3px 4px 11px rgba(0, 0, 0, 0.10));
+                        margin-bottom: 32px;
+                        width: min-content;
+                        border-radius: 50%;
+                    }
+
+                    .work__text2 {
+                        color: rgba(255, 255, 255, 0.8);
+                        font-family: Inter;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 20px;
+                        /* 111.111% */
+                        margin-bottom: 17px;
+                    }
+
+                    .work__text3 {
+                        color: rgba(255, 255, 255, 0.6);
+                        font-family: Montserrat;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 16px;
+                        /* 114.286% */
+
+                    }
+                }
+
+                .work__body:nth-child(4) {
+                    .work__fon-gray {
+                        left: -61px;
+                        width: 150%;
+                    }
+                }
+
+                .work__body:nth-child(6) {
+                    .work__text1 {
+                        font-size: 30px;
+                        padding: 11px 19px;
+                        margin-bottom: 16px;
+                        margin-top: -10px;
+                    }
+
+                    .work__fon-gray {
+                        display: none;
+                    }
+
+                    .work__fon-text-blue {
+                        .work__mark {
+                            color: white;
+                            font-size: 42px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .advantages__external {
+        background: rgba(246, 246, 249, 0.9);
+        position: relative;
+        @include sc_margin-top(90, 90, 250, 1366);
+        overflow-x: clip;
+
+        .advantages__img {
+            @include sc_height(339, 339, 250, 1366);
+            opacity: 0.5;
+            filter: blur(24.5px);
+            position: absolute;
+            top: 0px;
+            @include sc_left(-1100, 0, 250, 1366);
+            height: 100%;
+        }
+
+        .advantages__subscribe {
+            position: relative;
+            z-index: 1;
+            margin: 0px auto;
+            @include sc_width(250, 1224, 300, 1366);
+            @include sc_padding(112, 111,
+                0, 0,
+                155, 132,
+                0, 0,
+                250, 1366);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include sc_column-gap(10, 121, 250, 1366);
+
+            .advantages__inner {
+                flex-basis: 609px;
+
+                .advantages__p1 {
+                    font-family: Inter;
+                    @include sc_font_size(20, 30, 250, 1366);
+                    font-weight: 700;
+                    @include sc_line-height(20, 36, 250, 1366);
+                    letter-spacing: 0em;
+                    margin-bottom: 30px;
+
+                    .advantages__span {
+                        font-family: Inter;
+                        @include sc_font_size(20, 30, 250, 1366);
+                        font-weight: 400;
+                        @include sc_line-height(20, 36, 250, 1366);
+                        letter-spacing: 0em;
+                    }
+                }
+
+                .advantages__p2 {
+                    font-family: Montserrat;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    letter-spacing: 0em;
+                }
+            }
+        }
+    }
+}

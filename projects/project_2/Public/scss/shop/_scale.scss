@@ -1,0 +1,91 @@
+@use "../shared_files/mixin" as m;
+
+@media (max-width: 400px) {
+    .body .body2 .section2 .container .products .collection {
+        grid-template-columns: 1fr;
+        margin: 0px auto;
+
+        .collection__img {
+            @include m.sc_width(204, 352, 250, 400);
+
+            div {
+                @include m.sc_height(280, 480, 250, 400);
+
+                img {
+                    display: none;
+                }
+            }
+
+            .img {
+                max-height: calc(280px + (480 - 280) * ((100vw - 250px) / (400 - 250))) // @include m.sc_height(280, 480, 250, 400);
+            }
+        }
+
+    }
+}
+
+@media (min-width: 1600px) {
+    .body .body2 {
+        .section1 {
+            margin-bottom: 214px;
+
+            .container {
+                width: 1110px;
+
+                .text1 {
+                    font-size: 55px;
+                }
+            }
+        }
+
+        .section2 {
+            margin-bottom: 130px;
+
+            .container {
+                width: 1110px;
+
+                .product_category {
+                    margin-bottom: 92px;
+
+                    button {
+                        padding: 19px 65px 19px 65px;
+                    }
+                }
+
+                .products {
+                    row-gap: 65px;
+
+                    .collection {
+                        row-gap: 65px;
+
+                        .collection__img {
+
+                            div {
+                                height: 478px;
+                            }
+
+                            .img {
+                                max-height: 478px;
+                                margin: 0px 0px 24px 0px;
+                            }
+
+                            .p1 {
+                                font-size: 20px;
+                            }
+                        }
+
+                    }
+
+                    .nav {
+
+                        button {
+                            width: 41px;
+                            height: 41px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,823 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 15px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(161, 161, 161);
+  border-radius: 8px;
+}
+
+::-webkit-input-placeholder {
+  color: rgb(0, 0, 0);
+}
+
+p,
+a,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: all 0.5s;
+  cursor: default;
+}
+
+.body .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 0px) {
+  .body.active {
+    overflow-y: hidden;
+  }
+  .body .wrapper.active {
+    padding-right: 15px;
+  }
+}
+:root {
+  --background-color-button-active: #7c7cff;
+  --background-color-button-noActive: #f0f0f0;
+  --background-color-button-noActive2: white;
+  --background-color: #f0f0f0;
+  --border-radius: 10px;
+  --transition: 300ms;
+  --border-button-noActive: 1px solid transparent;
+  --border-button-active: 1px solid #7c7cff;
+}
+
+body {
+  display: flex;
+  position: relative;
+}
+body .knowledgeBase__ElementAdd,
+body .knowledgeBase__ParameterAdd,
+body .knowledgeBase__SubElementAdd {
+  transition: var(--transition);
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  background-color: rgba(0, 0, 0, 0.313);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .knowledgeBase__ElementAdd .ElementAdd__popapAdd,
+body .knowledgeBase__ElementAdd .ParameterAdd__popapAdd,
+body .knowledgeBase__ElementAdd .SubElementAdd__popapAdd,
+body .knowledgeBase__ParameterAdd .ElementAdd__popapAdd,
+body .knowledgeBase__ParameterAdd .ParameterAdd__popapAdd,
+body .knowledgeBase__ParameterAdd .SubElementAdd__popapAdd,
+body .knowledgeBase__SubElementAdd .ElementAdd__popapAdd,
+body .knowledgeBase__SubElementAdd .ParameterAdd__popapAdd,
+body .knowledgeBase__SubElementAdd .SubElementAdd__popapAdd {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .knowledgeBase__ElementAdd .ElementAdd__popapAdd .popapAdd__header,
+body .knowledgeBase__ElementAdd .ParameterAdd__popapAdd .popapAdd__header,
+body .knowledgeBase__ElementAdd .SubElementAdd__popapAdd .popapAdd__header,
+body .knowledgeBase__ParameterAdd .ElementAdd__popapAdd .popapAdd__header,
+body .knowledgeBase__ParameterAdd .ParameterAdd__popapAdd .popapAdd__header,
+body .knowledgeBase__ParameterAdd .SubElementAdd__popapAdd .popapAdd__header,
+body .knowledgeBase__SubElementAdd .ElementAdd__popapAdd .popapAdd__header,
+body .knowledgeBase__SubElementAdd .ParameterAdd__popapAdd .popapAdd__header,
+body .knowledgeBase__SubElementAdd .SubElementAdd__popapAdd .popapAdd__header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body .knowledgeBase__ElementAdd .ElementAdd__popapAdd .popapAdd__header .popapAdd__header_input,
+body .knowledgeBase__ElementAdd .ParameterAdd__popapAdd .popapAdd__header .popapAdd__header_input,
+body .knowledgeBase__ElementAdd .SubElementAdd__popapAdd .popapAdd__header .popapAdd__header_input,
+body .knowledgeBase__ParameterAdd .ElementAdd__popapAdd .popapAdd__header .popapAdd__header_input,
+body .knowledgeBase__ParameterAdd .ParameterAdd__popapAdd .popapAdd__header .popapAdd__header_input,
+body .knowledgeBase__ParameterAdd .SubElementAdd__popapAdd .popapAdd__header .popapAdd__header_input,
+body .knowledgeBase__SubElementAdd .ElementAdd__popapAdd .popapAdd__header .popapAdd__header_input,
+body .knowledgeBase__SubElementAdd .ParameterAdd__popapAdd .popapAdd__header .popapAdd__header_input,
+body .knowledgeBase__SubElementAdd .SubElementAdd__popapAdd .popapAdd__header .popapAdd__header_input {
+  font-size: inherit;
+  padding: 5px 15px;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-button-noActive);
+  text-wrap: wrap;
+  height: auto;
+}
+body .knowledgeBase__ElementAdd .ElementAdd__popapAdd .popapAdd__footer,
+body .knowledgeBase__ElementAdd .ParameterAdd__popapAdd .popapAdd__footer,
+body .knowledgeBase__ElementAdd .SubElementAdd__popapAdd .popapAdd__footer,
+body .knowledgeBase__ParameterAdd .ElementAdd__popapAdd .popapAdd__footer,
+body .knowledgeBase__ParameterAdd .ParameterAdd__popapAdd .popapAdd__footer,
+body .knowledgeBase__ParameterAdd .SubElementAdd__popapAdd .popapAdd__footer,
+body .knowledgeBase__SubElementAdd .ElementAdd__popapAdd .popapAdd__footer,
+body .knowledgeBase__SubElementAdd .ParameterAdd__popapAdd .popapAdd__footer,
+body .knowledgeBase__SubElementAdd .SubElementAdd__popapAdd .popapAdd__footer {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+body .knowledgeBase__ElementAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__ElementAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close,
+body .knowledgeBase__ElementAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__ElementAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_close,
+body .knowledgeBase__ElementAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__ElementAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close,
+body .knowledgeBase__ParameterAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__ParameterAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close,
+body .knowledgeBase__ParameterAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__ParameterAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_close,
+body .knowledgeBase__ParameterAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__ParameterAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close,
+body .knowledgeBase__SubElementAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__SubElementAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close,
+body .knowledgeBase__SubElementAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__SubElementAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_close,
+body .knowledgeBase__SubElementAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add,
+body .knowledgeBase__SubElementAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close {
+  font-size: inherit;
+  padding: 5px 15px;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-button-noActive);
+}
+body .knowledgeBase__ElementAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__ElementAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover,
+body .knowledgeBase__ElementAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__ElementAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover,
+body .knowledgeBase__ElementAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__ElementAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover,
+body .knowledgeBase__ParameterAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__ParameterAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover,
+body .knowledgeBase__ParameterAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__ParameterAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover,
+body .knowledgeBase__ParameterAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__ParameterAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover,
+body .knowledgeBase__SubElementAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__SubElementAdd .ElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover,
+body .knowledgeBase__SubElementAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__SubElementAdd .ParameterAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover,
+body .knowledgeBase__SubElementAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_add:hover,
+body .knowledgeBase__SubElementAdd .SubElementAdd__popapAdd .popapAdd__footer .popapAdd__footer_close:hover {
+  color: white;
+  background-color: var(--background-color-button-active);
+}
+body .knowledgeBase__ElementAdd.active,
+body .knowledgeBase__ParameterAdd.active,
+body .knowledgeBase__SubElementAdd.active {
+  left: 0%;
+}
+body .knowledgeBase__ElementEdit,
+body .knowledgeBase__ParameterEdit,
+body .knowledgeBase__SubElementEdit {
+  transition: var(--transition);
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  background-color: rgba(0, 0, 0, 0.313);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .knowledgeBase__ElementEdit .ElementEdit__popapEdit,
+body .knowledgeBase__ElementEdit .ParameterEdit__popapEdit,
+body .knowledgeBase__ElementEdit .SubElementEdit__popapEdit,
+body .knowledgeBase__ParameterEdit .ElementEdit__popapEdit,
+body .knowledgeBase__ParameterEdit .ParameterEdit__popapEdit,
+body .knowledgeBase__ParameterEdit .SubElementEdit__popapEdit,
+body .knowledgeBase__SubElementEdit .ElementEdit__popapEdit,
+body .knowledgeBase__SubElementEdit .ParameterEdit__popapEdit,
+body .knowledgeBase__SubElementEdit .SubElementEdit__popapEdit {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .knowledgeBase__ElementEdit .ElementEdit__popapEdit .popapEdit__header,
+body .knowledgeBase__ElementEdit .ParameterEdit__popapEdit .popapEdit__header,
+body .knowledgeBase__ElementEdit .SubElementEdit__popapEdit .popapEdit__header,
+body .knowledgeBase__ParameterEdit .ElementEdit__popapEdit .popapEdit__header,
+body .knowledgeBase__ParameterEdit .ParameterEdit__popapEdit .popapEdit__header,
+body .knowledgeBase__ParameterEdit .SubElementEdit__popapEdit .popapEdit__header,
+body .knowledgeBase__SubElementEdit .ElementEdit__popapEdit .popapEdit__header,
+body .knowledgeBase__SubElementEdit .ParameterEdit__popapEdit .popapEdit__header,
+body .knowledgeBase__SubElementEdit .SubElementEdit__popapEdit .popapEdit__header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body .knowledgeBase__ElementEdit .ElementEdit__popapEdit .popapEdit__header .popapEdit__header_input,
+body .knowledgeBase__ElementEdit .ParameterEdit__popapEdit .popapEdit__header .popapEdit__header_input,
+body .knowledgeBase__ElementEdit .SubElementEdit__popapEdit .popapEdit__header .popapEdit__header_input,
+body .knowledgeBase__ParameterEdit .ElementEdit__popapEdit .popapEdit__header .popapEdit__header_input,
+body .knowledgeBase__ParameterEdit .ParameterEdit__popapEdit .popapEdit__header .popapEdit__header_input,
+body .knowledgeBase__ParameterEdit .SubElementEdit__popapEdit .popapEdit__header .popapEdit__header_input,
+body .knowledgeBase__SubElementEdit .ElementEdit__popapEdit .popapEdit__header .popapEdit__header_input,
+body .knowledgeBase__SubElementEdit .ParameterEdit__popapEdit .popapEdit__header .popapEdit__header_input,
+body .knowledgeBase__SubElementEdit .SubElementEdit__popapEdit .popapEdit__header .popapEdit__header_input {
+  font-size: inherit;
+  padding: 5px 15px;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-button-noActive);
+}
+body .knowledgeBase__ElementEdit .ElementEdit__popapEdit .popapEdit__footer,
+body .knowledgeBase__ElementEdit .ParameterEdit__popapEdit .popapEdit__footer,
+body .knowledgeBase__ElementEdit .SubElementEdit__popapEdit .popapEdit__footer,
+body .knowledgeBase__ParameterEdit .ElementEdit__popapEdit .popapEdit__footer,
+body .knowledgeBase__ParameterEdit .ParameterEdit__popapEdit .popapEdit__footer,
+body .knowledgeBase__ParameterEdit .SubElementEdit__popapEdit .popapEdit__footer,
+body .knowledgeBase__SubElementEdit .ElementEdit__popapEdit .popapEdit__footer,
+body .knowledgeBase__SubElementEdit .ParameterEdit__popapEdit .popapEdit__footer,
+body .knowledgeBase__SubElementEdit .SubElementEdit__popapEdit .popapEdit__footer {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+body .knowledgeBase__ElementEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__ElementEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close,
+body .knowledgeBase__ElementEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__ElementEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_close,
+body .knowledgeBase__ElementEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__ElementEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close,
+body .knowledgeBase__ParameterEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__ParameterEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close,
+body .knowledgeBase__ParameterEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__ParameterEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_close,
+body .knowledgeBase__ParameterEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__ParameterEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close,
+body .knowledgeBase__SubElementEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__SubElementEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close,
+body .knowledgeBase__SubElementEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__SubElementEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_close,
+body .knowledgeBase__SubElementEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit,
+body .knowledgeBase__SubElementEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close {
+  font-size: inherit;
+  padding: 5px 15px;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-button-noActive);
+}
+body .knowledgeBase__ElementEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__ElementEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover,
+body .knowledgeBase__ElementEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__ElementEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover,
+body .knowledgeBase__ElementEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__ElementEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover,
+body .knowledgeBase__ParameterEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__ParameterEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover,
+body .knowledgeBase__ParameterEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__ParameterEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover,
+body .knowledgeBase__ParameterEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__ParameterEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover,
+body .knowledgeBase__SubElementEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__SubElementEdit .ElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover,
+body .knowledgeBase__SubElementEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__SubElementEdit .ParameterEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover,
+body .knowledgeBase__SubElementEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_edit:hover,
+body .knowledgeBase__SubElementEdit .SubElementEdit__popapEdit .popapEdit__footer .popapEdit__footer_close:hover {
+  color: white;
+  background-color: var(--background-color-button-active);
+}
+body .knowledgeBase__ElementEdit.active,
+body .knowledgeBase__ParameterEdit.active,
+body .knowledgeBase__SubElementEdit.active {
+  left: 0%;
+}
+body .knowledgeBase__ElementDelet,
+body .knowledgeBase__ParameterDelet,
+body .knowledgeBase__SubElementDelet {
+  transition: var(--transition);
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  background-color: rgba(0, 0, 0, 0.313);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .knowledgeBase__ElementDelet .ElementDelet__popapDelet,
+body .knowledgeBase__ElementDelet .ParameterDelet__popapDelet,
+body .knowledgeBase__ElementDelet .SubElementDelet__popapDelet,
+body .knowledgeBase__ParameterDelet .ElementDelet__popapDelet,
+body .knowledgeBase__ParameterDelet .ParameterDelet__popapDelet,
+body .knowledgeBase__ParameterDelet .SubElementDelet__popapDelet,
+body .knowledgeBase__SubElementDelet .ElementDelet__popapDelet,
+body .knowledgeBase__SubElementDelet .ParameterDelet__popapDelet,
+body .knowledgeBase__SubElementDelet .SubElementDelet__popapDelet {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .knowledgeBase__ElementDelet .ElementDelet__popapDelet .popapDelet__header,
+body .knowledgeBase__ElementDelet .ParameterDelet__popapDelet .popapDelet__header,
+body .knowledgeBase__ElementDelet .SubElementDelet__popapDelet .popapDelet__header,
+body .knowledgeBase__ParameterDelet .ElementDelet__popapDelet .popapDelet__header,
+body .knowledgeBase__ParameterDelet .ParameterDelet__popapDelet .popapDelet__header,
+body .knowledgeBase__ParameterDelet .SubElementDelet__popapDelet .popapDelet__header,
+body .knowledgeBase__SubElementDelet .ElementDelet__popapDelet .popapDelet__header,
+body .knowledgeBase__SubElementDelet .ParameterDelet__popapDelet .popapDelet__header,
+body .knowledgeBase__SubElementDelet .SubElementDelet__popapDelet .popapDelet__header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body .knowledgeBase__ElementDelet .ElementDelet__popapDelet .popapDelet__header .popapDelet__header_input,
+body .knowledgeBase__ElementDelet .ParameterDelet__popapDelet .popapDelet__header .popapDelet__header_input,
+body .knowledgeBase__ElementDelet .SubElementDelet__popapDelet .popapDelet__header .popapDelet__header_input,
+body .knowledgeBase__ParameterDelet .ElementDelet__popapDelet .popapDelet__header .popapDelet__header_input,
+body .knowledgeBase__ParameterDelet .ParameterDelet__popapDelet .popapDelet__header .popapDelet__header_input,
+body .knowledgeBase__ParameterDelet .SubElementDelet__popapDelet .popapDelet__header .popapDelet__header_input,
+body .knowledgeBase__SubElementDelet .ElementDelet__popapDelet .popapDelet__header .popapDelet__header_input,
+body .knowledgeBase__SubElementDelet .ParameterDelet__popapDelet .popapDelet__header .popapDelet__header_input,
+body .knowledgeBase__SubElementDelet .SubElementDelet__popapDelet .popapDelet__header .popapDelet__header_input {
+  font-size: inherit;
+  padding: 5px 15px;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-button-noActive);
+}
+body .knowledgeBase__ElementDelet .ElementDelet__popapDelet .popapDelet__footer,
+body .knowledgeBase__ElementDelet .ParameterDelet__popapDelet .popapDelet__footer,
+body .knowledgeBase__ElementDelet .SubElementDelet__popapDelet .popapDelet__footer,
+body .knowledgeBase__ParameterDelet .ElementDelet__popapDelet .popapDelet__footer,
+body .knowledgeBase__ParameterDelet .ParameterDelet__popapDelet .popapDelet__footer,
+body .knowledgeBase__ParameterDelet .SubElementDelet__popapDelet .popapDelet__footer,
+body .knowledgeBase__SubElementDelet .ElementDelet__popapDelet .popapDelet__footer,
+body .knowledgeBase__SubElementDelet .ParameterDelet__popapDelet .popapDelet__footer,
+body .knowledgeBase__SubElementDelet .SubElementDelet__popapDelet .popapDelet__footer {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+body .knowledgeBase__ElementDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__ElementDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close,
+body .knowledgeBase__ElementDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__ElementDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_close,
+body .knowledgeBase__ElementDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__ElementDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close,
+body .knowledgeBase__ParameterDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__ParameterDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close,
+body .knowledgeBase__ParameterDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__ParameterDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_close,
+body .knowledgeBase__ParameterDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__ParameterDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close,
+body .knowledgeBase__SubElementDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__SubElementDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close,
+body .knowledgeBase__SubElementDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__SubElementDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_close,
+body .knowledgeBase__SubElementDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet,
+body .knowledgeBase__SubElementDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close {
+  font-size: inherit;
+  padding: 5px 15px;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-button-noActive);
+}
+body .knowledgeBase__ElementDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__ElementDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover,
+body .knowledgeBase__ElementDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__ElementDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover,
+body .knowledgeBase__ElementDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__ElementDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover,
+body .knowledgeBase__ParameterDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__ParameterDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover,
+body .knowledgeBase__ParameterDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__ParameterDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover,
+body .knowledgeBase__ParameterDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__ParameterDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover,
+body .knowledgeBase__SubElementDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__SubElementDelet .ElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover,
+body .knowledgeBase__SubElementDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__SubElementDelet .ParameterDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover,
+body .knowledgeBase__SubElementDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_delet:hover,
+body .knowledgeBase__SubElementDelet .SubElementDelet__popapDelet .popapDelet__footer .popapDelet__footer_close:hover {
+  color: white;
+  background-color: var(--background-color-button-active);
+}
+body .knowledgeBase__ElementDelet.active,
+body .knowledgeBase__ParameterDelet.active,
+body .knowledgeBase__SubElementDelet.active {
+  left: 0%;
+}
+body #root {
+  width: calc(100% - 20px);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: hidden;
+  position: relative;
+}
+body #root .nav {
+  display: flex;
+  gap: 20px;
+}
+body #root .nav .nav__button {
+  font-size: inherit;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-button-noActive);
+}
+body #root .nav .nav__button.active {
+  background-color: var(--background-color-button-active);
+  color: white;
+}
+body #root .content {
+  flex-grow: 1;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  overflow-y: auto;
+}
+body #root .content .content__knowledgeBase {
+  width: calc(100% - 20px);
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 26% 26% auto;
+  gap: 10px;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements {
+  min-width: 217px;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__parameters {
+  min-width: 217px;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__add,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__add,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__add,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__add,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__add,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__add,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__add,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__add,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__add {
+  margin-right: 10px;
+  width: calc(100% - 10px);
+  align-items: center;
+  padding: 15px 0px;
+  background-color: var(--background-color-button-noActive);
+  font-size: inherit;
+  border-color: #7c7cff;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-button-noActive2);
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__add:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__add:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__add:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__add:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__add:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__add:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__add:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__add:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__add:hover {
+  background-color: var(--background-color-button-active);
+  color: white;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: var(--background-color-button-noActive);
+  border: var(--border-button-noActive);
+  transition: var(--transition);
+  background-color: white;
+  margin-right: 10px;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .subElements__text,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .subElements__text,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .subElements__text,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .subElements__text,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .subElements__text,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .subElements__text,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .subElements__text,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .subElements__text,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .subElements__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .subElements__text p,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .subElements__text p,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .subElements__text p,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .subElements__text p,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .subElements__text p,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .subElements__text p,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .subElements__text p,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .subElements__text p,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .subElements__text p {
+  width: fit-content;
+  padding: 5px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--background-color);
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .subElements__options,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .subElements__options,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .subElements__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .subElements__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .subElements__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .subElements__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .subElements__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .subElements__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .element__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .parameter__options,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .subElements__options {
+  display: flex;
+  gap: 5px;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .subElements__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .subElements__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .subElements__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .subElements__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .subElements__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .subElements__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .subElements__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .subElements__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .element__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .parameter__options .options__img,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .subElements__options .options__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: var(--transition);
+  border: var(--border-button-noActive);
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element .subElements__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter .subElements__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement .subElements__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element .subElements__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter .subElements__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement .subElements__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element .subElements__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter .subElements__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .element__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .parameter__options .options__img:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement .subElements__options .options__img:hover {
+  border: var(--border-button-active);
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter:hover,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement:hover {
+  border: var(--border-button-active);
+}
+body #root .content .content__knowledgeBase .knowledgeBase__elements .elements__element.active,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .parameters__parameter.active,
+body #root .content .content__knowledgeBase .knowledgeBase__elements .subElements__subElement.active,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .elements__element.active,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .parameters__parameter.active,
+body #root .content .content__knowledgeBase .knowledgeBase__parameters .subElements__subElement.active,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .elements__element.active,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .parameters__parameter.active,
+body #root .content .content__knowledgeBase .knowledgeBase__subElements .subElements__subElement.active {
+  background-color: var(--background-color-button-active);
+  color: white;
+}
+body #root .content .content__knowledgeBase .knowledgeBase__parameter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+body #root .content .content__SearchInformation {
+  width: calc(100% - 20px);
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+}
+body #root .content .content__SearchInformation .searchInformation__question {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body #root .content .content__SearchInformation .searchInformation__question .question__array {
+  display: flex;
+  gap: 20px;
+}
+body #root .content .content__SearchInformation .searchInformation__question .question__array .options__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: var(--transition);
+  border: var(--border-button-noActive);
+}
+body #root .content .content__SearchInformation .searchInformation__question .question__array .options__img:hover {
+  border: var(--border-button-active);
+}
+body #root .content .content__SearchInformation .searchInformation__question .question__text {
+  border-radius: var(--border-radius);
+  font-size: inherit;
+  padding: 10px;
+}
+body #root .content .content__SearchInformation .searchInformation__question .question__proposedText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body #root .content .content__SearchInformation .searchInformation__question .question__proposedText .proposedText__p {
+  padding: 10px;
+  border-radius: var(--border-radius);
+  font-size: inherit;
+  color: black;
+  transition: var(--transition);
+  overflow-y: scroll;
+}
+body #root .content .content__SearchInformation .searchInformation__question .question__proposedText .proposedText__p:hover {
+  color: white;
+  background-color: var(--background-color-button-active);
+}
+body #root .content .content__SearchInformation .searchInformation__result {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: scroll;
+}
+body #root .content .content__SearchInformation .searchInformation__result .result {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: var(--background-color-button-noActive);
+  border: var(--border-button-noActive);
+  transition: var(--transition);
+  background-color: white;
+  margin-right: 10px;
+}
+body #root .content .content__SearchInformation .searchInformation__result .result p {
+  width: fit-content;
+  padding: 5px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--background-color);
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNoYXJlZF9maWxlL19udWxsX2Nzcy5zY3NzIiwic2hhcmVkX2ZpbGUvX2Nzcy5zY3NzIiwic2hhcmVkX2ZpbGUvX3NjYWxlLnNjc3MiLCJpbmRleC9fY3NzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTtFQUNBOzs7QUFHRjtFQUNFOzs7QUFHRjtFQUNFOzs7QUFHRjtFQUNFOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7OztBQUdGO0VBQ0U7OztBQUdGO0VBQ0U7OztBQUdGO0VBQ0U7RUFDQTs7O0FBR0Y7RUFDRTs7O0FBR0Y7RUFDRTs7O0FBR0Y7RUFDRTs7O0FBR0Y7RUFDRTs7O0FBR0Y7RUFDRTtFQUNBOzs7QUFHRjtFQUNFOzs7QUFHRjtFQUNFOzs7QUFHRjtFQUNFO0VBQ0E7OztBQUdGO0VBQ0U7OztBQ3BGRjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFTSTtFQUNBOzs7QUFJQTtFQUNJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQ25CUjtFQUVRO0lBQ0k7O0VBS0o7SUFDSTs7O0FDVFo7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOzs7QUFHSjtFQUNJO0VBQ0E7O0FBR0E7QUFBQTtBQUFBO0VBR0k7RUFFQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBR0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJO0VBQ0E7RUFDQTs7QUFFQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBSVI7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBQ0k7RUFDQTtFQUNBOztBQUVBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUVJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBQ0k7RUFDQTs7QUFNaEI7QUFBQTtBQUFBO0VBQ0k7O0FBTVI7QUFBQTtBQUFBO0VBR0k7RUFFQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBR0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJO0VBQ0E7RUFDQTs7QUFFQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFDSTtFQUNBO0VBQ0E7RUFDQTs7QUFJUjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFDSTtFQUNBO0VBQ0E7O0FBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBRUk7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFDSTtFQUNBOztBQU1oQjtBQUFBO0FBQUE7RUFDSTs7QUFNUjtBQUFBO0FBQUE7RUFHSTtFQUVBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFHSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBQ0k7RUFDQTtFQUNBOztBQUVBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJO0VBQ0E7RUFDQTtFQUNBOztBQUlSO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJO0VBQ0E7RUFDQTs7QUFFQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFFSTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJO0VBQ0E7O0FBTWhCO0FBQUE7QUFBQTtFQUNJOztBQU1SO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBR0E7RUFDSTtFQUNBOztBQUVBO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDSTtFQUNBOztBQU9aO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDSTs7QUFHSjtFQUNJOztBQUdKO0FBQUE7QUFBQTtFQUdJO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUdJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJO0VBQ0E7O0FBSVI7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBR0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFDSTtFQUNBO0VBQ0E7O0FBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7O0FBSVI7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0VBR0k7RUFDQTs7QUFFQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUdBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJOztBQUtaO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJOztBQUdKO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQUNJO0VBQ0E7O0FBS1o7RUFDSTtFQUNBO0VBQ0E7RUFDQTs7QUFJUjtFQUNJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDSTtFQUNBO0VBQ0E7O0FBRUE7RUFDSTtFQUNBOztBQUVBO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFHQTtFQUNJOztBQUtaO0VBQ0k7RUFDQTtFQUNBOztBQUdKO0VBQ0k7RUFDQTtFQUNBOztBQUdBO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0k7RUFDQTs7QUFNaEI7RUFDSTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNJO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNJO0VBQ0E7RUFDQTtFQUNBIiwiZmlsZSI6ImluZGV4L2luZGV4Lm1pbi5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIqIHtcclxuICBwYWRkaW5nOiAwO1xyXG4gIG1hcmdpbjogMDtcclxuICBib3JkZXI6IDA7XHJcbn1cclxuXHJcbiosICo6YmVmb3JlLCAqOmFmdGVyIHtcclxuICAtbW96LWJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgLXdlYmtpdC1ib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbjpmb2N1cywgOmFjdGl2ZSB7XHJcbiAgb3V0bGluZTogbm9uZTtcclxufVxyXG5cclxuYTpmb2N1cywgYTphY3RpdmUge1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbn1cclxuXHJcbm5hdiwgZm9vdGVyLCBoZWFkZXIsIGFzaWRlIHtcclxuICBkaXNwbGF5OiBibG9jaztcclxufVxyXG5cclxuaHRtbCwgYm9keSB7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGZvbnQtc2l6ZTogMTAwJTtcclxuICBsaW5lLWhlaWdodDogMTtcclxuICBmb250LXNpemU6IDE1cHg7XHJcbiAgLW1zLXRleHQtc2l6ZS1hZGp1c3Q6IDEwMCU7XHJcbiAgLW1vei10ZXh0LXNpemUtYWRqdXN0OiAxMDAlO1xyXG4gIC13ZWJraXQtdGV4dC1zaXplLWFkanVzdDogMTAwJTtcclxufVxyXG5cclxuaW5wdXQsIGJ1dHRvbiwgdGV4dGFyZWEge1xyXG4gIGZvbnQtZmFtaWx5OiBpbmhlcml0O1xyXG59XHJcblxyXG5pbnB1dDo6LW1zLWNsZWFyIHtcclxuICBkaXNwbGF5OiBub25lO1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuYnV0dG9uOjotbW96LWZvY3VzLWlubmVyIHtcclxuICBwYWRkaW5nOiAwO1xyXG4gIGJvcmRlcjogMDtcclxufVxyXG5cclxuYSwgYTp2aXNpdGVkIHtcclxuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn1cclxuXHJcbmE6aG92ZXIge1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG5cclxudWwgbGkge1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbn1cclxuXHJcbmltZyB7XHJcbiAgdmVydGljYWwtYWxpZ246IHRvcDtcclxufVxyXG5cclxuaDEsIGgyLCBoMywgaDQsIGg1LCBoNiB7XHJcbiAgZm9udC1zaXplOiBpbmhlcml0O1xyXG4gIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbn1cclxuXHJcbjo6LXdlYmtpdC1zY3JvbGxiYXItdHJhY2sge1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG59XHJcblxyXG46Oi13ZWJraXQtc2Nyb2xsYmFyIHtcclxuICB3aWR0aDogMTVweDtcclxufVxyXG5cclxuOjotd2Via2l0LXNjcm9sbGJhci10aHVtYiB7XHJcbiAgYmFja2dyb3VuZDogcmdiKDE2MSwgMTYxLCAxNjEpO1xyXG4gIGJvcmRlci1yYWRpdXM6IDhweDtcclxufVxyXG5cclxuOjotd2Via2l0LWlucHV0LXBsYWNlaG9sZGVyIHtcclxuICBjb2xvcjogcmdiKDAsIDAsIDApO1xyXG59IiwiQHVzZSBcIl9taXhpbi5zY3NzXCIgYXMgKjtcclxuQHVzZSBcIi4vZm9udHMuc2Nzc1wiIGFzICo7XHJcblxyXG5wLFxyXG5hLFxyXG5zcGFuLFxyXG5oMSxcclxuaDIsXHJcbmgzLFxyXG5oNCxcclxuaDUsXHJcbmg2IHtcclxuICAgIHRyYW5zaXRpb246IGFsbCAwLjVzO1xyXG4gICAgY3Vyc29yOiBkZWZhdWx0O1xyXG59XHJcblxyXG4uYm9keSB7XHJcbiAgICAud3JhcHBlciB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICB9XHJcbn0iLCJAdXNlIFwiX21peGluLnNjc3NcIiBhcyAqO1xyXG5AdXNlIFwiLi9mb250cy5zY3NzXCIgYXMgKjtcclxuXHJcbkBtZWRpYShtYXgtd2lkdGg6IDBweCkge1xyXG4gICAgLmJvZHkge1xyXG4gICAgICAgICYuYWN0aXZlIHtcclxuICAgICAgICAgICAgb3ZlcmZsb3cteTogaGlkZGVuO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuYm9keSAud3JhcHBlciB7XHJcbiAgICAgICAgJi5hY3RpdmUge1xyXG4gICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAxNXB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufSIsIkB1c2UgXCIuLi9zaGFyZWRfZmlsZS9taXhpblwiIGFzICo7XHJcbkB1c2UgXCIuLi9zaGFyZWRfZmlsZS9mb250c1wiIGFzICo7XHJcblxyXG46cm9vdCB7XHJcbiAgICAtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLWFjdGl2ZTogIzdjN2NmZjtcclxuICAgIC0tYmFja2dyb3VuZC1jb2xvci1idXR0b24tbm9BY3RpdmU6ICNmMGYwZjA7XHJcbiAgICAtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLW5vQWN0aXZlMjogd2hpdGU7XHJcbiAgICAtLWJhY2tncm91bmQtY29sb3I6ICNmMGYwZjA7XHJcbiAgICAtLWJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICAtLXRyYW5zaXRpb246IDMwMG1zO1xyXG4gICAgLS1ib3JkZXItYnV0dG9uLW5vQWN0aXZlOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XHJcbiAgICAtLWJvcmRlci1idXR0b24tYWN0aXZlOiAxcHggc29saWQgIzdjN2NmZjtcclxufVxyXG5cclxuYm9keSB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG5cclxuXHJcbiAgICAua25vd2xlZGdlQmFzZV9fRWxlbWVudEFkZCxcclxuICAgIC5rbm93bGVkZ2VCYXNlX19QYXJhbWV0ZXJBZGQsXHJcbiAgICAua25vd2xlZGdlQmFzZV9fU3ViRWxlbWVudEFkZCB7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogdmFyKC0tdHJhbnNpdGlvbik7XHJcblxyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB0b3A6IDBweDtcclxuICAgICAgICBsZWZ0OiAtMTAwJTtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMzEzKTtcclxuICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cclxuICAgICAgICAuRWxlbWVudEFkZF9fcG9wYXBBZGQsXHJcbiAgICAgICAgLlBhcmFtZXRlckFkZF9fcG9wYXBBZGQsXHJcbiAgICAgICAgLlN1YkVsZW1lbnRBZGRfX3BvcGFwQWRkIHtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMpO1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgICAgICBnYXA6IDIwcHg7XHJcblxyXG4gICAgICAgICAgICAucG9wYXBBZGRfX2hlYWRlciB7XHJcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICAgICAgICAgIGdhcDogMTBweDtcclxuXHJcbiAgICAgICAgICAgICAgICAucG9wYXBBZGRfX2hlYWRlcl9pbnB1dCB7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC1zaXplOiBpbmhlcml0O1xyXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDVweCAxNXB4O1xyXG4gICAgICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMpO1xyXG4gICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLW5vQWN0aXZlKTtcclxuICAgICAgICAgICAgICAgICAgICB0ZXh0LXdyYXA6IHdyYXA7XHJcbiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAucG9wYXBBZGRfX2Zvb3RlciB7XHJcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgZ2FwOiAyMHB4O1xyXG4gICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBlbmQ7XHJcblxyXG4gICAgICAgICAgICAgICAgLnBvcGFwQWRkX19mb290ZXJfYWRkLFxyXG4gICAgICAgICAgICAgICAgLnBvcGFwQWRkX19mb290ZXJfY2xvc2Uge1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogaW5oZXJpdDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiB2YXIoLS10cmFuc2l0aW9uKTtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzKTtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWJ1dHRvbi1ub0FjdGl2ZSk7XHJcblxyXG4gICAgICAgICAgICAgICAgICAgICY6aG92ZXIge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLWFjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAmLmFjdGl2ZSB7XHJcbiAgICAgICAgICAgIGxlZnQ6IDAlO1xyXG4gICAgICAgIH1cclxuXHJcblxyXG4gICAgfVxyXG5cclxuICAgIC5rbm93bGVkZ2VCYXNlX19FbGVtZW50RWRpdCxcclxuICAgIC5rbm93bGVkZ2VCYXNlX19QYXJhbWV0ZXJFZGl0LFxyXG4gICAgLmtub3dsZWRnZUJhc2VfX1N1YkVsZW1lbnRFZGl0IHtcclxuICAgICAgICB0cmFuc2l0aW9uOiB2YXIoLS10cmFuc2l0aW9uKTtcclxuXHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHRvcDogMHB4O1xyXG4gICAgICAgIGxlZnQ6IC0xMDAlO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4zMTMpO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gICAgICAgIC5FbGVtZW50RWRpdF9fcG9wYXBFZGl0LFxyXG4gICAgICAgIC5QYXJhbWV0ZXJFZGl0X19wb3BhcEVkaXQsXHJcbiAgICAgICAgLlN1YkVsZW1lbnRFZGl0X19wb3BhcEVkaXQge1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cyk7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgICAgIGdhcDogMjBweDtcclxuXHJcbiAgICAgICAgICAgIC5wb3BhcEVkaXRfX2hlYWRlciB7XHJcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICAgICAgICAgIGdhcDogMTBweDtcclxuXHJcbiAgICAgICAgICAgICAgICAucG9wYXBFZGl0X19oZWFkZXJfaW5wdXQge1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogaW5oZXJpdDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzKTtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWJ1dHRvbi1ub0FjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5wb3BhcEVkaXRfX2Zvb3RlciB7XHJcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgZ2FwOiAyMHB4O1xyXG4gICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBlbmQ7XHJcblxyXG4gICAgICAgICAgICAgICAgLnBvcGFwRWRpdF9fZm9vdGVyX2VkaXQsXHJcbiAgICAgICAgICAgICAgICAucG9wYXBFZGl0X19mb290ZXJfY2xvc2Uge1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogaW5oZXJpdDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiB2YXIoLS10cmFuc2l0aW9uKTtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzKTtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWJ1dHRvbi1ub0FjdGl2ZSk7XHJcblxyXG4gICAgICAgICAgICAgICAgICAgICY6aG92ZXIge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLWFjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAmLmFjdGl2ZSB7XHJcbiAgICAgICAgICAgIGxlZnQ6IDAlO1xyXG4gICAgICAgIH1cclxuXHJcblxyXG4gICAgfVxyXG5cclxuICAgIC5rbm93bGVkZ2VCYXNlX19FbGVtZW50RGVsZXQsXHJcbiAgICAua25vd2xlZGdlQmFzZV9fUGFyYW1ldGVyRGVsZXQsXHJcbiAgICAua25vd2xlZGdlQmFzZV9fU3ViRWxlbWVudERlbGV0IHtcclxuICAgICAgICB0cmFuc2l0aW9uOiB2YXIoLS10cmFuc2l0aW9uKTtcclxuXHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHRvcDogMHB4O1xyXG4gICAgICAgIGxlZnQ6IC0xMDAlO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4zMTMpO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gICAgICAgIC5FbGVtZW50RGVsZXRfX3BvcGFwRGVsZXQsXHJcbiAgICAgICAgLlBhcmFtZXRlckRlbGV0X19wb3BhcERlbGV0LFxyXG4gICAgICAgIC5TdWJFbGVtZW50RGVsZXRfX3BvcGFwRGVsZXQge1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cyk7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgICAgIGdhcDogMjBweDtcclxuXHJcbiAgICAgICAgICAgIC5wb3BhcERlbGV0X19oZWFkZXIge1xyXG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgICAgICAgICBnYXA6IDEwcHg7XHJcblxyXG4gICAgICAgICAgICAgICAgLnBvcGFwRGVsZXRfX2hlYWRlcl9pbnB1dCB7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC1zaXplOiBpbmhlcml0O1xyXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDVweCAxNXB4O1xyXG4gICAgICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMpO1xyXG4gICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLW5vQWN0aXZlKTtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLnBvcGFwRGVsZXRfX2Zvb3RlciB7XHJcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgZ2FwOiAyMHB4O1xyXG4gICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBlbmQ7XHJcblxyXG4gICAgICAgICAgICAgICAgLnBvcGFwRGVsZXRfX2Zvb3Rlcl9kZWxldCxcclxuICAgICAgICAgICAgICAgIC5wb3BhcERlbGV0X19mb290ZXJfY2xvc2Uge1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogaW5oZXJpdDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiB2YXIoLS10cmFuc2l0aW9uKTtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzKTtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWJ1dHRvbi1ub0FjdGl2ZSk7XHJcblxyXG4gICAgICAgICAgICAgICAgICAgICY6aG92ZXIge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLWFjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAmLmFjdGl2ZSB7XHJcbiAgICAgICAgICAgIGxlZnQ6IDAlO1xyXG4gICAgICAgIH1cclxuXHJcblxyXG4gICAgfVxyXG5cclxuICAgICNyb290IHtcclxuICAgICAgICB3aWR0aDogY2FsYygxMDAlIC0gMjBweCk7XHJcbiAgICAgICAgbWFyZ2luOiAxMHB4O1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICBnYXA6IDEwcHg7XHJcbiAgICAgICAgb3ZlcmZsb3cteTogaGlkZGVuO1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHJcblxyXG4gICAgICAgIC5uYXYge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBnYXA6IDIwcHg7XHJcblxyXG4gICAgICAgICAgICAubmF2X19idXR0b24ge1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiBpbmhlcml0O1xyXG4gICAgICAgICAgICAgICAgcGFkZGluZzogMTBweDtcclxuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMpO1xyXG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYmFja2dyb3VuZC1jb2xvci1idXR0b24tbm9BY3RpdmUpO1xyXG5cclxuICAgICAgICAgICAgICAgICYuYWN0aXZlIHtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWJ1dHRvbi1hY3RpdmUpO1xyXG4gICAgICAgICAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG5cclxuXHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuY29udGVudCB7XHJcbiAgICAgICAgICAgIGZsZXgtZ3JvdzogMTtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYmFja2dyb3VuZC1jb2xvcik7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMpO1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG5cclxuICAgICAgICAgICAgLmNvbnRlbnRfX2tub3dsZWRnZUJhc2Uge1xyXG4gICAgICAgICAgICAgICAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgZGlzcGxheTogZ3JpZDtcclxuICAgICAgICAgICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogMjYlIDI2JSBhdXRvO1xyXG4gICAgICAgICAgICAgICAgZ2FwOiAxMHB4O1xyXG5cclxuICAgICAgICAgICAgICAgIC5rbm93bGVkZ2VCYXNlX19lbGVtZW50cyB7XHJcbiAgICAgICAgICAgICAgICAgICAgbWluLXdpZHRoOiAyMTdweDtcclxuICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICAgICAua25vd2xlZGdlQmFzZV9fcGFyYW1ldGVycyB7XHJcbiAgICAgICAgICAgICAgICAgICAgbWluLXdpZHRoOiAyMTdweDtcclxuICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICAgICAua25vd2xlZGdlQmFzZV9fZWxlbWVudHMsXHJcbiAgICAgICAgICAgICAgICAua25vd2xlZGdlQmFzZV9fcGFyYW1ldGVycyxcclxuICAgICAgICAgICAgICAgIC5rbm93bGVkZ2VCYXNlX19zdWJFbGVtZW50cyB7XHJcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgICAgICAgICAgICAgIGdhcDogMTBweDtcclxuICAgICAgICAgICAgICAgICAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG5cclxuICAgICAgICAgICAgICAgICAgICAuZWxlbWVudHNfX2FkZCxcclxuICAgICAgICAgICAgICAgICAgICAucGFyYW1ldGVyc19fYWRkLFxyXG4gICAgICAgICAgICAgICAgICAgIC5zdWJFbGVtZW50c19fYWRkIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogY2FsYygxMDAlIC0gMTBweCk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDE1cHggMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWJ1dHRvbi1ub0FjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogaW5oZXJpdDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiAjN2M3Y2ZmO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiB2YXIoLS10cmFuc2l0aW9uKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cyk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLW5vQWN0aXZlMik7XHJcblxyXG4gICAgICAgICAgICAgICAgICAgICAgICAmOmhvdmVyIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLWFjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAgICAgICAgIC5lbGVtZW50c19fZWxlbWVudCxcclxuICAgICAgICAgICAgICAgICAgICAucGFyYW1ldGVyc19fcGFyYW1ldGVyLFxyXG4gICAgICAgICAgICAgICAgICAgIC5zdWJFbGVtZW50c19fc3ViRWxlbWVudCB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGdhcDogMTBweDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICAgICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yLWJ1dHRvbi1ub0FjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGJvcmRlcjogdmFyKC0tYm9yZGVyLWJ1dHRvbi1ub0FjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zaXRpb246IHZhcigtLXRyYW5zaXRpb24pO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgLnN1YkVsZW1lbnRzX190ZXh0IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2FwOiAxMHB4O1xyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHAge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdpZHRoOiBmaXQtY29udGVudDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiA1cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cyk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiAycHggc29saWQgdmFyKC0tYmFja2dyb3VuZC1jb2xvcik7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIC5lbGVtZW50X19vcHRpb25zLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAucGFyYW1ldGVyX19vcHRpb25zLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAuc3ViRWxlbWVudHNfX29wdGlvbnMge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGdhcDogNXB4O1xyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIC5vcHRpb25zX19pbWcge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdpZHRoOiAzMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhlaWdodDogMzBweDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNpdGlvbjogdmFyKC0tdHJhbnNpdGlvbik7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiB2YXIoLS1ib3JkZXItYnV0dG9uLW5vQWN0aXZlKTtcclxuXHJcblxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICY6aG92ZXIge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IHZhcigtLWJvcmRlci1idXR0b24tYWN0aXZlKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICY6aG92ZXIge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiB2YXIoLS1ib3JkZXItYnV0dG9uLWFjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICYuYWN0aXZlIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLWFjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAgICAgLmtub3dsZWRnZUJhc2VfX3BhcmFtZXRlciB7XHJcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgICAgICAgICAgICAgIGdhcDogMTBweDtcclxuICAgICAgICAgICAgICAgICAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAuY29udGVudF9fU2VhcmNoSW5mb3JtYXRpb24ge1xyXG4gICAgICAgICAgICAgICAgd2lkdGg6IGNhbGMoMTAwJSAtIDIwcHgpO1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgZGlzcGxheTogZ3JpZDtcclxuICAgICAgICAgICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogNTAlIDUwJTtcclxuICAgICAgICAgICAgICAgIGdhcDogMTBweDtcclxuXHJcbiAgICAgICAgICAgICAgICAuc2VhcmNoSW5mb3JtYXRpb25fX3F1ZXN0aW9uIHtcclxuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgICAgICAgICAgICAgZ2FwOiAxMHB4O1xyXG5cclxuICAgICAgICAgICAgICAgICAgICAucXVlc3Rpb25fX2FycmF5IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZ2FwOiAyMHB4O1xyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgLm9wdGlvbnNfX2ltZyB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogMzBweDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhlaWdodDogMzBweDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zaXRpb246IHZhcigtLXRyYW5zaXRpb24pO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiB2YXIoLS1ib3JkZXItYnV0dG9uLW5vQWN0aXZlKTtcclxuXHJcblxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgJjpob3ZlciB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiB2YXIoLS1ib3JkZXItYnV0dG9uLWFjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAgICAgICAgIC5xdWVzdGlvbl9fdGV4dCB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMpO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBmb250LXNpemU6IGluaGVyaXQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgICAgICAgICAucXVlc3Rpb25fX3Byb3Bvc2VkVGV4dHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZ2FwOiA1cHg7XHJcblxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgLnByb3Bvc2VkVGV4dF9fcHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiB2YXIoLS1ib3JkZXItcmFkaXVzKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogaW5oZXJpdDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zaXRpb246IHZhcigtLXRyYW5zaXRpb24pO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgb3ZlcmZsb3cteTogc2Nyb2xsO1xyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICY6aG92ZXJ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQtY29sb3ItYnV0dG9uLWFjdGl2ZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAgICAgLnNlYXJjaEluZm9ybWF0aW9uX19yZXN1bHQge1xyXG4gICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICAgICAgICAgICAgICBnYXA6IDEwcHg7XHJcbiAgICAgICAgICAgICAgICAgICAgb3ZlcmZsb3cteTogc2Nyb2xsO1xyXG5cclxuICAgICAgICAgICAgICAgICAgICAucmVzdWx0IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZ2FwOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczogc3RhcnQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogMTBweDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cyk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGJvcmRlcjogdmFyKC0tYmFja2dyb3VuZC1jb2xvci1idXR0b24tbm9BY3RpdmUpO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IHZhcigtLWJvcmRlci1idXR0b24tbm9BY3RpdmUpO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiB2YXIoLS10cmFuc2l0aW9uKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxuXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHAge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgd2lkdGg6IGZpdC1jb250ZW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogNXB4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cyk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBib3JkZXI6IDJweCBzb2xpZCB2YXIoLS1iYWNrZ3JvdW5kLWNvbG9yKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH1cclxufSJdfQ== */

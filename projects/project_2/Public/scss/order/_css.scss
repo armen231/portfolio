@@ -1,0 +1,197 @@
+@use "../shared_files/mixin" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+.body {
+    .body2 {
+        .header {
+            margin: calc(10px + (51 - 10) * ((100vw - 250px) / (1600 - 250))) auto calc(10px + (190 - 10) * ((100vw - 250px) / (1600 - 250))) auto;
+
+        }
+
+        .section1 {
+            width: 100%;
+            margin-bottom: calc(10px + (214 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+            .container {
+                margin: 0px auto;
+                @include sc_width(300, 1110, 320, 1600);
+
+                .text1 {
+                    @include sc_font_size(20, 55, 250, 1600);
+                    margin-bottom: 26px;
+                }
+
+                .text2 {
+                    font-size: 17px;
+
+                    .text2__span1 {
+                        font-size: 17px;
+                        color: rgba(144, 144, 144, 1);
+                    }
+                }
+            }
+        }
+
+        .section2 {
+            width: 100%;
+            margin-bottom: calc(10px + (130 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+            .container {
+                margin: 0px auto;
+                @include sc_width(230, 1110, 240, 1600);
+                display: flex;
+                justify-content: space-between;
+
+                .content1 {
+                    @include sc_width(230, 350, 240, 1600);
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: calc(10px + (80 - 10) * ((100vw - 250px) / (1600 - 250)));
+
+                    div {
+                        p {
+                            font-size: 25px;
+                            line-height: 35px;
+                            margin-bottom: calc(10px + (47 - 10) * ((100vw - 250px) / (1600 - 250)));
+                        }
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 35px;
+
+                            div {
+                                width: 100%;
+                                border-bottom: 1px solid black;
+                                padding-bottom: 16px;
+
+                                input,
+                                textarea {
+                                    width: 100%;
+                                }
+
+                                .input_country {
+                                    max-width: calc(230 + (350 - 230) * ((100vw - 240px) / (1600 - 240)));
+                                    max-height: 134px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .content2 {
+                    @include sc_width(220, 305, 240, 1600);
+                    display: flex;
+                    flex-direction: column;
+                    @include sc_row-gap(35, 159, 250, 1600);
+
+                    .content2__conten1 {
+                        .text1 {
+                            width: 84%;
+                            margin: 0px auto calc(10px + (47 - 10) * ((100vw - 250px) / (1600 - 250))) auto;
+                            font-size: 25px;
+                            line-height: 35px;
+                        }
+
+                        div {
+                            width: 84%;
+                            margin: 0px auto;
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 35px;
+
+                            div {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                            }
+                        }
+
+                        .result {
+                            margin-top: 35px;
+                            @include sc_padding(10, 20,
+                                10, 30,
+                                10, 20,
+                                10, 30,
+                                250, 1600);
+                            background: rgba(241, 234, 220, 1);
+                            color: black;
+                            font-size: 20px;
+                            line-height: 28px;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+
+                            p {
+                                font-size: 20px;
+                                line-height: 28px;
+                            }
+                        }
+                    }
+
+                    .content2__content2 {
+                        padding: 0px 24px 0px 24px;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        @include sc_row-gap(35, 47, 250, 1600);
+
+                        .content2__text1 {
+                            font-size: 25px;
+                            line-height: 35px;
+                        }
+
+                        div {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            column-gap: 14px;
+                            height: 22px;
+
+                            .button {
+                                width: 22px;
+                                padding: 6px;
+                                border: 1px solid black;
+
+                                div {
+                                    height: 10px;
+                                    background: white;
+
+                                    &._active{
+                                        background: black;
+                                    }
+                                }
+                                
+                            }
+
+                            .text1 {
+                                font-size: 17px;
+                                line-height: 23.8px;
+                            }
+                        }
+
+                        .post_order {
+                            width: 100%;
+                            @include sc_padding(10, 20,
+                                20, 50,
+                                10, 20,
+                                20, 50,
+                                250, 1600);
+                            color: white;
+                            background: rgba(110, 156, 159, 1);
+                            transition: all 0.5s;
+
+                            &:hover {
+                                background: rgba(80, 148, 152, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

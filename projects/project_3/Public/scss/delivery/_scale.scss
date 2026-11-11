@@ -1,0 +1,201 @@
+@use "../../../Public/scss/shared_file/mixin" as m;
+
+@media (max-width: 800px) {
+    .body .devilery .container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        .devilery__part1 .delivery__consultation {
+            display: none;
+        }
+
+        .devilery__part2 {
+            .devilery__img1 {
+                width: 100%;
+                position: static;
+                left: 0px;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                height: auto;
+            }
+        }
+
+        .delivery__consultation2 {
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+}
+
+@media (max-width: 552px) {
+    .body .cost-devilery .container .cost-devilery__choice {
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        row-gap: 43px;
+
+        div {
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        .cost-devilery__part2 {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 915px) {
+    .body .assembling-devilery .container .assembling-devilery__input {
+        grid-template-columns: 1fr;
+        row-gap: 17px;
+    }
+
+    .body .assembling-devilery .container {
+        .assembling-devilery__send {
+            width: 90%;
+            margin: 0px auto;
+        }
+    }
+}
+
+@media (min-width: 1366px) {
+    .body {
+    
+            .devilery {
+    
+                .container {
+                    width: 1224px;
+                    height: 546px;
+    
+                    .devilery__part1 {
+    
+                        .devilery__p1 {
+                            margin-top: 52px;
+                            margin-bottom: 24px;
+                        }
+    
+                        .devilery__p2 {
+                            font-size: 46px;
+                            line-height: 43px;
+                            margin-bottom: 12px;
+                        }
+    
+                        .devilery__p3 {
+                            font-size: 16px;
+                            margin-bottom: 101px;
+                        }
+    
+                        .delivery__consultation {
+                            margin-top: 122px;
+                            padding: 36px 36px 36px 71px;
+                            column-gap: 80px;
+    
+                            .delivery__p1 {
+                                font-size: 20px;
+                                line-height: 23px;
+                            }
+                        }
+                    }
+    
+                    .devilery__part2 {
+                        .devilery__img1 {
+                            top: -60px;
+                            left: 91px;
+                            height: 653px;
+                        }
+                    }
+    
+                    .delivery__consultation2 {
+    
+                        .delivery__p1 {
+                            font-size: 20px;
+                            line-height: 23px;
+                        }
+                    }
+                }
+            }
+    
+            .cost-devilery {
+    
+                .container {
+                    width: 1224px;
+                    margin-bottom: 64px;
+                    padding-top: 86px;
+                    padding-bottom: 80px;
+    
+                    .cost-devilery__p1 {
+                        font-size: 38px;
+                        line-height: 40px;
+                        margin-bottom: 31px;
+                    }
+    
+                    .cost-devilery__p2 {
+                        margin-bottom: 36px;
+                    }
+    
+                    .cost-devilery__list-text {
+    
+                        .cost-devilery__part:nth-child(4) {
+                            margin-bottom: 46px;
+                        }
+    
+                        .cost-devilery__part:nth-child(5) {
+                            margin-bottom: 53px;
+    
+                        }
+                    }
+    
+                    .cost-devilery__p3 {
+                        margin-bottom: 80px;
+                    }
+    
+                    .cost-devilery__choice {
+
+                        div {
+    
+                            img {
+                                height: 348px;
+                            }
+    
+                            .cost-devilery__p1 {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .assembling-devilery {
+    
+                .container {
+                    width: 1224px;
+                    padding: 94px 0px 137px 0px;
+    
+                    .assembling-devilery__p1 {
+                        width: 691px;
+                        font-size: 36px;
+                        margin-bottom: 14px;
+                    }
+    
+                    .assembling-devilery__p2 {
+                        width: 691px;
+                        margin-bottom: 48px;
+                    }
+    
+                    .assembling-devilery__input {
+                        column-gap: 38px;
+                        margin-bottom: 33px;
+                    }
+    
+                    .assembling-devilery__send {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+}
