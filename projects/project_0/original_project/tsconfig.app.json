@@ -1,0 +1,79 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    // tsBuildInfoFile Задаёт путь к файлу, в котором TypeScript хранит информацию о последующей инкрементальной сборке (какие файлы уже скомпилированы и с какими хешами). Это ускоряет повторные компиляции: пересобираются только изменённые файлы. По умолчанию: не задан (файл .tsbuildinfo не создаётся, инкрементальная сборка в таком виде не используется).
+    "target": "es2023",
+    // target Определяет версию ECMAScript, до которой будет понижен (транспилирован) код. От неё зависит, какие синтаксические конструкции можно оставить как есть (например, optional chaining, nullish coalescing), а какие нужно переписать. По умолчанию: "ES5" (или "ES3" в очень старых версиях).
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    // lib Указывает, какие библиотеки объявлений типов (.d.ts) подключать к проекту: возможности языка ES-версий и глобальные API окружения (DOM — браузерные объекты document, window и т. д.). По умолчанию: определяется значением target — для "es2023" это был бы ["ES2023"] без DOM; DOM включается только если target — браузерная среда, а не Node.js.
+    "module": "esnext",
+    // module Задаёт формат модулей, в который компилируется код: "commonjs", "es2020", "esnext" и другие. Значение "esnext" означает «новейший доступный синтаксис ES-модулей», сборщик (Vite/Rollup) сам преобразует его дальше. По умолчанию: зависит от target — для "ES5"/"ES3" это "CommonJS", иначе "ES1998"-подобный формат, определяемый target.
+    "types": [
+      "vite/client"
+    ],
+    // types Ограничивает список @types-пакетов, глобальные типы которых автоматически включаются в компиляцию. Здесь подключаются типы клиента Vite: import.meta.env, import.meta.hot и пр. По умолчанию: включаются глобальные типы из всех пакетов "@types/*", видимых в node_modules (или по путям typeRoots).
+    "allowArbitraryExtensions": true,
+    // allowArbitraryExtensions Разрешает импортировать файлы с произвольными расширениями (например, "./file.css" или "./data.toml"), если рядом лежит файл объявлений "*.css.d.ts" с типами для них. Без него такой импорт даст ошибку "cannot find module". По умолчанию: false.
+    "skipLibCheck": true,
+    // skipLibCheck Отключает проверку типов во всех файлах объявлений (.d.ts), включая библиотеки из node_modules. Значительно ускоряет компиляцию и обходит конфликты типов между разными версиями библиотек. Проверка вашего собственного кода при этом не отключается. По умолчанию: false.
+    
+    
+    "strict": true,
+    // strict Включает сразу весь набор строгих проверок: strictNullChecks, strictFunctionTypes, strictBindCallApply, strictPropertyInitialization, noImplicitAny, noImplicitThis, useUnknownInCatchVariables, alwaysStrict. Явное перечисление отдельных флагов ниже дублирует то, что и так включено через strict, но делает конфиг самодокументируемым. По умолчанию: false.
+    "strictBindCallApply": true,
+    // strictBindCallApply Включает строгую проверку типов параметров и возвращаемого значения у методов bind, call и apply функций — они больше не принимают произвольные аргументы (any). По умолчанию: false.
+    "strictFunctionTypes": true,
+    // strictFunctionTypes Включает строгую контрвариантную проверку типов функций: типы параметров функции сравниваются контрвариантно, а не бивариантно, что надёжнее защищает от ошибок при присваивании одной функции другой. На методы классов не влияет (они проверяются бивариантно всегда). По умолчанию: false.
+    "strictNullChecks": true,
+    // strictNullChecks Делает типы null и undefined отличимыми от остальных: значение nullable-типа нельзя использовать без проверки. Самая важная строгая проверка — без неё null и null совместимы со всеми типами. По умолчанию: false.
+    "strictPropertyInitialization": true,
+    // strictPropertyInitialization Запрещает объявлять в классе свойства без начального значения, если они не инициализированы в конструкторе и не являются опциональными или definite-assignment (`!`). Работает только вместе с strictNullChecks. По умолчанию: false.
+    "allowSyntheticDefaultImports": true,
+    // allowSyntheticDefaultImports Разрешает синтаксис импорта по умолчанию (`import React from "react"`) для модулей, которые не имеют default-экспорта (например, CommonJS-модули). Не меняет код на этапе компиляции — только убирает ошибку типов, считая экспорт синтетическим. По умолчанию: true, если включен esModuleInterop или module — "system"; иначе false.
+    "esModuleInterop": true,
+    // esModuleInterop Включает совместимость между ES-модулями и CommonJS: генерирует вспомогательные функции (__importStar, __importDefault), позволяет импортировать CommonJS-модуль как default (`import fs from "fs"`) и автоматически включает allowSyntheticDefaultImports. По умолчанию: false.
+    "noImplicitReturns": true,
+    // noImplicitReturns Запрещает функции иметь пути выполнения, из которых значение не возвращается: если хотя бы одна ветка не содержит return при наличии возвращаемого типа — ошибка компиляции. По умолчанию: false.
+    "allowUnreachableCode": false,
+    // allowUnreachableCode Управляет реакцией на недостижимый код (после return, throw и т. п.). Значение false превращает такой код в ошибку компиляции; true — разрешает молча; undefined (по умолчанию) — выдаёт предупреждение редактору, но не ошибку.
+    "exactOptionalPropertyTypes": true,
+    // exactOptionalPropertyTypes Запрещает присваивать опциональному свойству (`prop?: T`) явное значение undefined: допустимо либо пропустить свойство, либо присвоить тип T, но не `prop: undefined` (для этого нужно объявить тип как `prop?: T | undefined`). По умолчанию: false.
+    "resolveJsonModule": true,
+    // resolveJsonModule Разрешает импортировать .json-файлы как модули: TypeScript выводит для них типы и проверяет, что импортируемые поля существуют. Требует либо ESM-цели (module: es2020+ / node16+), либо включенный esModuleInterop. По умолчанию: false.
+    
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    // moduleResolution Определяет алгоритм разрешения импортов. Значение "bundler" имитирует поведение современных сборщиков (Vite, esbuild): поддерживает расширения без указания (import "./file"), exports-поле package.json и требует module со значением "esnext" или выше. По умолчанию: зависит от module — например, для "commonjs" это "node10" (классический Node), для "node16"/"nodenext" — соответствующие Node-алгоритмы.
+    "verbatimModuleSyntax": true,
+    // verbatimModuleSyntax Запрещает удалять import- и export-директивы при компиляции и требует явно указывать тип импорта через `import type`. Импорт значения останется в коде как есть, а всё, что написано с type, гарантированно исчезнет. По умолчанию: false.
+    "allowImportingTsExtensions": true,
+    // allowImportingTsExtensions Разрешает импортировать файлы с явным указанием расширения (.ts, .tsx): `import "./app.ts"`. Используется вместе с noEmit или rewriteRelativeImportExtensions — TypeScript сам не умеет переписывать расширения при генерации JS. По умолчанию: false.
+    "moduleDetection": "force",
+    // moduleDetection Определяет, как TypeScript решает, является ли файл модулем. Значение "force" принудительно трактует все файлы как ES-модули даже без import/export — важно для корректной работы import.meta и изоляции области видимости. По умолчанию: "auto" — файл считается модулем только при наличии import/export.
+    "noEmit": true,
+    // noEmit Запрещает TypeScript генерировать JS-файлы. Компиляция используется только для проверки типов, а трансляцию и сборку делает Vite (через esbuild). По умолчанию: false.
+    "jsx": "react-jsx",
+    // jsx Определяет, как обрабатывать JSX. Значение "react-jsx" компилирует JSX в вызовы функций из react/jsx-runtime (новый JSX Transform) — React не нужно импортировать в каждом файле, отдельный этап преобразования не нужен. По умолчанию: "preserve" — JSX сохраняется в выводе без изменений (для внешних трансляторов).
+    
+    
+    /* Linting */
+    "noUnusedLocals": true,
+    // noUnusedLocals Запрещает неиспользуемые локальные переменные: если переменная объявлена, но нигде не используется после объявления — ошибка компиляции. По умолчанию: false.
+    "noUnusedParameters": true,
+    // noUnusedParameters Запрещает неиспользуемые параметры функций. Помогает избегать «мёртвого» кода; параметр с ведущим подчёркиванием (_unused) исключение не считается ошибкой. По умолчанию: false.
+    "erasableSyntaxOnly": true,
+    // erasableSyntaxOnly Запрещает синтаксис TypeScript, который требует генерации кода (энейбл-параметры, конструкторы с полями-параметрами, namespace с кодом, enum-переменные): разрешены только конструкции, которые можно просто «стереть» (type, interface, as-операторы). Ускоряет и упрощает транспиляцию через esbuild/Node type stripping. По умолчанию: false.
+    "noFallthroughCasesInSwitch": true
+    // noFallthroughCasesInSwitch Запрещает «проваливание» (fallthrough) между кейсами в switch: кейс без break/return/throw, из которого управление «падает» в следующий кейс, считается ошибкой (пустой кейс или явное `// falls through` допускаются). По умолчанию: false.
+  },
+  "include": ["src"]
+  // include Указывает, какие файлы проверять на типы. В данном случае — все файлы в папке src
+}

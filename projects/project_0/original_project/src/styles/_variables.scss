@@ -1,0 +1,12 @@
+:root {
+    --themeBackground1: #ffffff;
+    --themeBackground2: #ffffff9e;
+    --themeColor: #000000;
+    --themeColor2: #383838;
+}
+
+$themeBackground1: var(--themeBackground1);
+$themeBackground2: var(--themeBackground2);
+$themeColor: var(--themeColor);
+$themeColor2: var(--themeColor2);
+$backdropFilter: 10px;

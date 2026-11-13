@@ -1,0 +1,100 @@
+@use '@/styles/_variables' as *;
+@use '@/styles/mixin' as *;
+
+.project-description {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+    background-color: transparent;
+    display: flex;
+    justify-content: end;
+    background-color: rgba(0, 0, 0, 0.676);
+
+    .project-description__content-data {
+        backdrop-filter: blur($backdropFilter);
+        height: calc(100% - 20px);
+        @include sc_width(400, 1032, 440, 4460);
+        background-color: $themeBackground2;
+        border-radius: 20px;
+        @include sc_padding1(10, 50, 440, 4460);
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+
+        .project-description__button-close {
+            cursor: default;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            margin: 10px;
+            // @include sc_margin1(0, 10, 250, 4460);
+            @include sc_width(24, 92, 250, 4460);
+            @include sc_min-height(24, 92, 250, 4460);
+            align-self: end;
+
+            .project-description__close {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include sc_font_size(18, 81, 250, 4460);
+                transition: all 0.3s;
+            }
+        }
+
+
+        .project-description__description {
+            margin: 10px 0px;
+
+            .project-description__title {
+                @include sc_font_size(22, 55, 250, 4460);
+                color: $themeColor;
+                margin-bottom: 10px;
+            }
+
+            .project-description__subTitle {
+                @include sc_font_size(14, 45, 250, 4460);
+                color: $themeColor2;
+                margin: 10px;
+                line-height: 1.5;
+            }
+        }
+
+        .project-description__open-project {
+            cursor: default;
+            align-self: center;
+            padding: 10px 25px;
+            text-align: center;
+            background: transparent;
+            border-radius: 12px;
+            border: 1px solid #007acc;
+            color: #007acc;
+            transition: 0.5s;
+            @include sc_font_size(22, 55, 250, 4460);
+            margin: 10px 0px;
+        }
+
+        .project-description__open-project--touch1 {
+            &:active {
+                color: white;
+                background: #007acc;
+            }
+        }
+
+        .project-description__open-project--touch0 {
+            &:hover {
+                color: white;
+                background: #007acc;
+            }
+        }
+
+        @media (max-width: 440px) {
+            width: 100%;
+            padding: 10px;
+        }
+    }
+}

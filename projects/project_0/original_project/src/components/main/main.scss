@@ -1,0 +1,30 @@
+@use "@/styles/global";
+@use '@/styles/_variables' as *;
+@use '@/styles/mixin' as *;
+
+body {
+    background-color: $themeBackground1;
+
+    &.active {
+        &::-webkit-scrollbar {
+            // display: none;
+            overflow-y: hidden;
+            /* Chrome, Safari, Edge */
+        }
+        overflow: hidden;
+    }
+
+
+
+    #root {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        height: stretch;
+
+        &.active{
+            overflow: hidden;
+        }
+    }
+}
