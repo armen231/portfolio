@@ -13,15 +13,15 @@ export const dataProject = [
         description: [
             {
                 title: 'Краткое описание',
-                text: 'Одностраничное веб-приложение, использующееся как стартовая страница для просмотра подробностей и открытия проектов',
+                text: 'Одностраничное веб-приложение, использующееся как стартовая страница для просмотра подробностей и открытия проектов.',
             },
             {
                 title: 'Функционал проекта',
-                text: ['Просмотр проектов'],
+                text: ['Масштабирование сайта под все устройства.','Просмотр проектов.'],
             },
             {
                 title: 'Используемые технологии',
-                text: ['VS Code.', 'html.', 'css (scss, @media запросы).', 'TypeScript.', 'js (addEventListener, localStorage).', 'React 19.'],
+                text: ['VS Code.', 'html.', 'css (scss, @media запросы).', 'TypeScript.', 'js (addEventListener, localStorage).', 'React 19.','useState','useEffect'],
             },
             {
                 title: 'Инструкция по установке и запуску',

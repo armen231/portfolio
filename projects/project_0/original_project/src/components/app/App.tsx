@@ -47,7 +47,7 @@ export default function App() {
 
   return (
     <>
-      <Header theme={theme} hundleSetTheme={hundleSetTheme}></Header>
+      <Header theme={theme} isTouch={isTouch} hundleSetTheme={hundleSetTheme}></Header>
 
       <ListProjects dataProject={dataProject} isTouch={isTouch} setDataProjectDescription={setDataProjectDescription}></ListProjects>
 

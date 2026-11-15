@@ -2,8 +2,8 @@
 @use '@/styles/_mixin' as *;
 
 .main_container {
-    @include sc_margin-bottom(20, 60, 250, 4460);
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     overflow: auto;
     border-radius: calc(15px + 15 * (100vw - 250px) / 1350);
     ;
@@ -15,7 +15,6 @@
 
     .section1 {
         width: 100%;
-        @include sc_margin-top(76, 284, 250, 4460);
 
         .container {
             padding-right: 15px;
@@ -129,7 +128,7 @@
 
     &::-webkit-scrollbar {
         width: 8px;
-        @include sc_width(4 ,17 ,250 ,4460 );
+        @include sc_width(4, 17, 250, 4460);
         /* задай нужную ширину */
 
 
@@ -140,5 +139,24 @@
 
     &::-webkit-scrollbar-track {
         background: transparent;
+    }
+
+
+    &.main_container_touch0 {
+        @include sc_padding-bottom(20, 60, 250, 4460);
+
+        .section1 {
+            @include sc_margin-top(76, 284, 250, 4460);
+        }
+    }
+
+    &.main_container_touch1 {
+        @include sc_padding-bottom(80, 120, 250, 4460);
+        @include sc_padding-top(10, 60, 250, 4460);
+
+
+        @media (min-width: 450px) {
+            @include sc_padding-bottom(81 ,220 ,450 ,4460 );
+        }
     }
 }

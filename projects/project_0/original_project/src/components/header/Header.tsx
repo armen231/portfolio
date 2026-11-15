@@ -4,7 +4,7 @@ import favicon from "../../../public/favicon.svg";
 export default function Header({...props}) {
   return(
     <>
-        <header className="header">
+      <header className={`header header_touch${props.isTouch}`}>
         <div className="container">
           <div className="header_header">
             <div className="header_logo">

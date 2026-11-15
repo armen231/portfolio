@@ -32,7 +32,7 @@ export default function ListProjects({...props}) {
 
   return(
     <>
-      <div className="main_container">
+      <div className={`main_container main_container_touch${props.isTouch}`}>
         <div className="section1">
           <div className="container">
             {

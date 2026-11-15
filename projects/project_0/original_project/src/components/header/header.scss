@@ -3,7 +3,6 @@
 
 .header {
     margin: 0px auto;
-    @include sc_margin-bottom(20, 60, 250, 4460);
     max-width: 100%;
     padding-top: 10px;
     position: absolute;
@@ -11,7 +10,6 @@
 
     .container {
         margin: 0px auto;
-        @include sc_margin-top(0, 70, 250, 4460);
         // @include sc_margin-left(17.667 ,max_v ,250 ,4460 );
         @include sc_width(220, 4000, 250, 4460);
 
@@ -71,5 +69,16 @@
                 }
             }
         }
+    }
+
+    &.header_touch0 {
+        .container {
+            @include sc_margin-top(0, 70, 250, 4460);
+        }
+    }
+
+    &.header_touch1{
+        @include sc_margin-bottom(20, 60, 250, 4460);
+        bottom: 0px;
     }
 }

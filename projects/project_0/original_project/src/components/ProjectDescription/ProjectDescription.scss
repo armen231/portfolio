@@ -24,6 +24,8 @@
         display: flex;
         flex-direction: column;
         overflow-y: auto;
+        row-gap: 10px;
+
 
         .project-description__button-close {
             cursor: default;
@@ -48,7 +50,6 @@
 
 
         .project-description__description {
-            margin: 10px 0px;
 
             .project-description__title {
                 @include sc_font_size(22, 55, 250, 4460);

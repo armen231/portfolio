@@ -18,7 +18,8 @@
 
  # Функционал проектов
 ## проект № 0
-1. Просмотр проектов.
+1. Масштабирование сайта под все устройства.
+2. Просмотр проектов.
 
 ## проект № 1
 1. Масштабирование сайта под все устройства.
@@ -45,7 +46,7 @@
        
 # Используемые технологии
 ## проект № 0
-VS Code, html, css (scss, @media запросы), TypeScript,js (addEventListener, localStorage),React 19,.
+VS Code, html, css (scss, @media запросы), TypeScript,js (addEventListener, localStorage), React 19, useState, useEffect.
 
 ## проект № 1
 VS Code, html, css (scss, @media запросы), js (document.querySelector, addEventListener).
