@@ -21,7 +21,7 @@ export const dataProject = [
             },
             {
                 title: 'Используемые технологии',
-                text: ['VS Code.', 'html.', 'css (scss, @media запросы).', 'TypeScript.', 'js (addEventListener, localStorage).', 'React 19.','useState','useEffect'],
+                text: ['VS Code.', 'html.', 'css (scss, @media запросы).', 'TypeScript.', 'js (addEventListener, localStorage).', 'React 19.','useState.','useEffect.'],
             },
             {
                 title: 'Инструкция по установке и запуску',
@@ -121,7 +121,7 @@ export const dataProject = [
             },
             {
                 title: 'Используемые технологии',
-                text: ['VS Code.', 'html.', 'css (scss, @media запросы).', 'TypeScript.', 'gulp.', 'React 19.', 'useState.', 'useReducer'],
+                text: ['VS Code.', 'html.', 'css (scss, @media запросы).', 'TypeScript.', 'gulp.', 'React 19.', 'useState.', 'useReducer.'],
             },
             {
                 title: 'Инструкция по установке и запуску',
